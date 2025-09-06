@@ -39,6 +39,29 @@ window.onscroll = () => {
     
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
+}
+
+/*==================== close mobile menu when clicking on nav links ====================*/
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        }
+        
+        // Scroll suave a la sección
+        const targetId = link.getAttribute('href');
+        if (targetId.startsWith('#')) {
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+    });
+});
     
 
 

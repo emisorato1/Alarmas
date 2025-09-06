@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pagina potrero | Emiliano Sorato</title>
-
+    <title>Seguridad Total - Instalación de Alarmas y Sistemas de Seguridad</title>
+    <meta name="description" content="Empresa especializada en instalación y mantenimiento de sistemas de seguridad integral. Protección 24/7 con tecnología de vanguardia para hogares y empresas.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <!-- box icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- custom css -->
     <link rel="stylesheet" href="public/css/style.css" />
@@ -17,236 +24,645 @@
   <body>
     <!-- header design -->
     <header class="header">
-      <a href="#" class="logo1">
-        <img src="public/img/logo1.png" alt="Logo" class="logo-img">
-      </a>
+      <div class="header-container">
+        <a href="#" class="logo">
+          <img src="public/img/Logo2.png" alt="Seguridad Total Logo" class="logo-img">
+        </a>
 
-      <i class="bx bx-menu" id="menu-icon"></i>
-      <nav class="navbar">
-        <a href="#inicio" class="active">INICIO</a>
-        <a href="#nosotros">NOSOTROS</a>
-        <a href="#servicios">SERVICIOS</a>
-        <a href="#contacto">CONTACTO</a>
-      </nav>
+        <nav class="navbar">
+          <a href="#inicio" class="nav-link active">INICIO</a>
+          <a href="#nosotros" class="nav-link">NOSOTROS</a>
+          <a href="#servicios" class="nav-link">SERVICIOS</a>
+          <a href="#trabajos" class="nav-link">TRABAJOS</a>
+          <a href="#contacto" class="nav-link">CONTACTO</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="https://wa.me/5492604264934?text=Hola,%20me%20gustaría%20cotizar%20un%20sistema%20de%20seguridad." class="btn-contact">
+            <i class='bx bxl-whatsapp'></i>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="menu-toggle" id="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+      <div class="hero-background">
+        <div class="hero-overlay"></div>
+      </div>
+      
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="highlight">SEGURIDAD TOTAL</span><br>
+            PARA SU HOGAR Y EMPRESA
+          </h1>
+          <p class="hero-subtitle">Protección 24/7 con tecnología de vanguardia</p>
+          <p class="hero-description">
+            Instalación y mantenimiento de sistemas de seguridad integral. 
+            Más de 10 años protegiendo lo que más importa.
+          </p>
+          
+          <div class="hero-actions">
+            <a href="#contacto" class="btn-primary">
+              <i class='bx bx-phone'></i>
+              <span>Solicitar Presupuesto</span>
+            </a>
+            <a href="#servicios" class="btn-secondary">
+              <i class='bx bx-shield'></i>
+              <span>Ver Servicios</span>
+            </a>
+          </div>
 
-    <!-- inicio-->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Instalaciones</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Años de Experiencia</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Soporte Técnico</span>
+            </div>
+          </div>
+        </div>
 
-    <section class="inicio" id="inicio">
+        <div class="hero-image">
+          <div class="image-container">
+            <img src="public/img/Logo1.png" alt="Seguridad Total" class="main-logo">
+            <div class="floating-elements">
+              <div class="element element-1">
+                <i class='bx bx-shield-check'></i>
+              </div>
+              <div class="element element-2">
+                <i class='bx bx-cctv'></i>
+              </div>
+              <div class="element element-3">
+                <i class='bx bx-lock'></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-      <div class="inicio-content">
-        <img src="public/img/logolargo.png" alt="Logo" class="logo2">
+      <div class="hero-features">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class='bx bx-cog'></i>
+          </div>
+          <h3>FULL SERVICE</h3>
+          <p>Instalación profesional y capacitada para cada necesidad</p>
+        </div>
         
-        <h3>NUESTRA IMAGINACION Y TECNOLOGIA</h3>
-        <h3>AL SERVICIO DE SU NECESIDAD</h3>
-        <p>Soluciones en diseño e impresión tridimensional</p>
-        <div class="social-media">
-          <a href="https://wa.me/5492604264934?text=Hola,%20me%20gustaría%20saber%20mas%20de%20su%20servicio."><i class='bx bxl-whatsapp'></i> </a>
-          <a href="https://www.instagram.com/emisorato" target="_blank" ><i class='bx bxl-instagram' ></i> </a>
-          <a href="https://www.linkedin.com/in/emiliano-sorato-866849269/" target="_blank"><i class='bx bxl-linkedin' ></i> </a>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class='bx bx-cctv'></i>
+          </div>
+          <h3>MANTENIMIENTO</h3>
+          <p>Tranquilidad y profesionalismo en cada instalación</p>
         </div>
-
-        <div class="descripcion-container">
-          <div class="descripcion-box">
-            <i class='bx bxl-sketch' ></i>
-            <h3>DISEÑO</h3>
-            <p>Creamos y buscamos la solución a su necesidad, dándole forma y función, pensando en su producción.</p>
-            <img src="public/img/img_diseño.jpg" alt="Imagen Diseño"  class="imagen-descripcion">
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class='bx bx-wrench'></i>
           </div>
-  
-          <div class="descripcion-box">
-            <i class='bx bx-cog' ></i>
-            <h3>DESARROLLO</h3>
-            <p>Desarrollamos la mecanización y funcionamiento de la solución, aplicando ingeniería al proyecto para brindar un resultado óptimo.</p>
-            <img src="public/img/img_desarrollo.jpg" alt="Imagen Descripción " class="imagen-descripcion">
+          <h3>REPARACIÓN</h3>
+          <p>Personal técnico especializado las 24hs, los 365 días</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class='bx bx-building'></i>
           </div>
-  
-          <div class="descripcion-box" >
-            <i class='bx bxs-devices' ></i>
-            <h3>PRODUCCIÓN</h3>
-            <p>Producimos las piezas con equipos propios, con el fin de garantizar nuestros estándares de calidad.</p>
-            <img src="public/img/img_produccion.jpg" alt="Imagen Descripción" class="imagen-descripcion">
-          </div>
+          <h3>INSTALACIÓN EN OBRA</h3>
+          <p>Cámaras de vigilancia en sectores estratégicos</p>
         </div>
       </div>
     </section>
 
-    
+     <!-- NOSOTROS-->
+     <section class="nosotros" id="nosotros">
+       <div class="nosotros-container">
+         <div class="nosotros-header">
+           <h2 class="heading">Sobre Nosotros</h2>
+           <div class="nosotros-subtitle">Más de una década protegiendo lo que más importa</div>
+         </div>
+         
+         <div class="nosotros-content">
+           <div class="nosotros-text">
+             <div class="nosotros-quote">
+               <i class='bx bx-shield-check'></i>
+               <h3>"SEGURIDAD TOTAL"</h3>
+             </div>
+             
+             <div class="nosotros-description">
+               <p class="nosotros-main-text">
+                 Somos una empresa especializada en la instalación y mantenimiento de sistemas de seguridad integral. 
+                 Con más de <strong>10 años de experiencia</strong> en el mercado, nos dedicamos a proteger lo más valioso: 
+                 <strong>su familia y su patrimonio</strong>.
+               </p>
+               
+               <p class="nosotros-secondary-text">
+                 Nuestro equipo de técnicos certificados utiliza la <strong>tecnología más avanzada</strong> para brindar 
+                 soluciones personalizadas que se adapten a sus necesidades específicas de seguridad.
+               </p>
+             </div>
+           </div>
+           
+           <div class="nosotros-features">
+             <div class="feature-item">
+               <i class='bx bx-certification'></i>
+               <h4>Certificados</h4>
+               <p>Técnicos especializados y certificados</p>
+             </div>
+             
+             <div class="feature-item">
+               <i class='bx bx-time'></i>
+               <h4>24/7</h4>
+               <p>Disponibilidad total los 365 días</p>
+             </div>
+             
+             <div class="feature-item">
+               <i class='bx bx-cog'></i>
+               <h4>Experiencia</h4>
+               <p>Más de 10 años en el mercado</p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
 
+     <!-- SERVICIOS-->
+     <section class="servicios" id="servicios">
+       <div class="container">
+         <div class="section-header">
+           <h2 class="section-title">Nuestros Servicios</h2>
+           <p class="section-subtitle">Soluciones integrales de seguridad para proteger lo que más importa</p>
+         </div>
+         
+         <div class="servicios-grid">
+           <div class="servicio-card">
+             <div class="servicio-image">
+               <img src="public/img/imgservicios/alarmas.jpg" alt="Sistemas de Alarma">
+               <div class="servicio-overlay">
+                 <a href="public/views/Servicios/alarmas.html" class="btn-servicio">
+                   <i class='bx bx-right-arrow-alt'></i>
+                 </a>
+               </div>
+             </div>
+             <div class="servicio-content">
+               <h3>Instalación de Alarmas</h3>
+               <p>Sistemas de alarma residenciales y comerciales con tecnología de última generación</p>
+               <ul class="servicio-features">
+                 <li><i class='bx bx-check'></i> Sensores de movimiento</li>
+                 <li><i class='bx bx-check'></i> Detección de humo</li>
+                 <li><i class='bx bx-check'></i> Monitoreo 24/7</li>
+               </ul>
+             </div>
+           </div>
 
+           <div class="servicio-card">
+             <div class="servicio-image">
+               <img src="public/img/imgservicios/camaras.jpg" alt="Cámaras de Seguridad">
+               <div class="servicio-overlay">
+                 <a href="public/views/Servicios/camaras.html" class="btn-servicio">
+                   <i class='bx bx-right-arrow-alt'></i>
+                 </a>
+               </div>
+             </div>
+             <div class="servicio-content">
+               <h3>Cámaras de Seguridad</h3>
+               <p>Video vigilancia HD con grabación en la nube y acceso remoto</p>
+               <ul class="servicio-features">
+                 <li><i class='bx bx-check'></i> Cámaras IP HD</li>
+                 <li><i class='bx bx-check'></i> Visión nocturna</li>
+                 <li><i class='bx bx-check'></i> Acceso móvil</li>
+               </ul>
+             </div>
+           </div>
 
+           <div class="servicio-card">
+             <div class="servicio-image">
+               <img src="public/img/imgservicios/control-acceso.jpg" alt="Control de Acceso">
+               <div class="servicio-overlay">
+                 <a href="public/views/Servicios/control-acceso.html" class="btn-servicio">
+                   <i class='bx bx-right-arrow-alt'></i>
+                 </a>
+               </div>
+             </div>
+             <div class="servicio-content">
+               <h3>Control de Acceso</h3>
+               <p>Porteros automáticos y sistemas de control de acceso biométrico</p>
+               <ul class="servicio-features">
+                 <li><i class='bx bx-check'></i> Porteros automáticos</li>
+                 <li><i class='bx bx-check'></i> Lectores biométricos</li>
+                 <li><i class='bx bx-check'></i> Tarjetas de acceso</li>
+               </ul>
+             </div>
+           </div>
 
+           <div class="servicio-card">
+             <div class="servicio-image">
+               <img src="public/img/imgservicios/instalaciones-electricas.jpg" alt="Instalaciones Eléctricas">
+               <div class="servicio-overlay">
+                 <a href="public/views/Servicios/instalaciones-electricas.html" class="btn-servicio">
+                   <i class='bx bx-right-arrow-alt'></i>
+                 </a>
+               </div>
+             </div>
+             <div class="servicio-content">
+               <h3>Instalaciones Eléctricas</h3>
+               <p>Instalaciones eléctricas residenciales y comerciales certificadas</p>
+               <ul class="servicio-features">
+                 <li><i class='bx bx-check'></i> Instalaciones certificadas</li>
+                 <li><i class='bx bx-check'></i> Mantenimiento preventivo</li>
+                 <li><i class='bx bx-check'></i> Emergencias 24/7</li>
+               </ul>
+             </div>
+           </div>
 
-<!-- NOSOTROS-->
+           <div class="servicio-card">
+             <div class="servicio-image">
+               <img src="public/img/imgservicios/redes-wifi.jpg" alt="Instalaciones de Redes">
+               <div class="servicio-overlay">
+                 <a href="public/views/Servicios/redes-wifi.html" class="btn-servicio">
+                   <i class='bx bx-right-arrow-alt'></i>
+                 </a>
+               </div>
+             </div>
+             <div class="servicio-content">
+               <h3>Instalaciones de Redes</h3>
+               <p>Redes WiFi empresariales y domésticas con cobertura optimizada</p>
+               <ul class="servicio-features">
+                 <li><i class='bx bx-check'></i> WiFi empresarial</li>
+                 <li><i class='bx bx-check'></i> Cobertura optimizada</li>
+                 <li><i class='bx bx-check'></i> Seguridad avanzada</li>
+               </ul>
+             </div>
+           </div>
 
-    <section class="nosotros" id="nosotros">
-      <div>
-        <h2 class="heading">Nosotros</h2>
-        <div class="columnas">
-          <h4 class="texto-nosotros">"ES3D SOLUTIONS" es una empresa creada con el objeto de dar solución a los problemas
-            y necesidades de nuestros clientes, aplicando nuestra amplia experiencia en el desarrollo
-            de soluciones prácticas en un mundo cada vez más complejo.  Conocimientos en ingeniería, 
-            electrónica y materiales compuestos, para desarrollar con éxito
-            las más variadas problemáticas que se plantean. <br>  
-          </h4>
-          <h4 class="texto-nosotros">
-            Esto somos y a su necesidad nos dedicamos.
-          </h4>
-        </div>
-      </div>
-    </section>
+           <div class="servicio-card">
+             <div class="servicio-image">
+               <img src="public/img/imgservicios/enlaces-wifi.jpg" alt="Enlaces WiFi">
+               <div class="servicio-overlay">
+                 <a href="public/views/Servicios/enlaces-wifi.html" class="btn-servicio">
+                   <i class='bx bx-right-arrow-alt'></i>
+                 </a>
+               </div>
+             </div>
+             <div class="servicio-content">
+               <h3>Enlaces WiFi</h3>
+               <p>Enlaces punto a punto para conectar ubicaciones remotas</p>
+               <ul class="servicio-features">
+                 <li><i class='bx bx-check'></i> Enlaces punto a punto</li>
+                 <li><i class='bx bx-check'></i> Alta velocidad</li>
+                 <li><i class='bx bx-check'></i> Distancias largas</li>
+               </ul>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
 
+     <!-- NUESTROS TRABAJOS -->
+     <section class="trabajos" id="trabajos">
+       <div class="container">
+         <div class="section-header">
+           <h2 class="section-title">Nuestros Trabajos</h2>
+           <p class="section-subtitle">Proyectos exitosos que demuestran nuestra experiencia y calidad</p>
+         </div>
+         
+         <div class="trabajos-gallery">
+           <div class="trabajo-item">
+             <div class="trabajo-image">
+               <img src="public/img/trabajos/instalacion-alarma-residencial.jpg" alt="Instalación Alarma Residencial">
+               <div class="trabajo-overlay">
+                 <div class="trabajo-info">
+                   <h3>Instalación Alarma Residencial</h3>
+                   <p>Casa en San Rafael - Sistema completo con 8 sensores</p>
+                   <div class="trabajo-tags">
+                     <span class="tag">Alarmas</span>
+                     <span class="tag">Residencial</span>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
 
+           <div class="trabajo-item">
+             <div class="trabajo-image">
+               <img src="public/img/trabajos/sistema-camaras-comercial.jpg" alt="Sistema de Cámaras Comercial">
+               <div class="trabajo-overlay">
+                 <div class="trabajo-info">
+                   <h3>Sistema de Cámaras Comercial</h3>
+                   <p>Local comercial - 12 cámaras HD con DVR</p>
+                   <div class="trabajo-tags">
+                     <span class="tag">Cámaras</span>
+                     <span class="tag">Comercial</span>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
 
+           <div class="trabajo-item">
+             <div class="trabajo-image">
+               <img src="public/img/trabajos/control-acceso-empresa.jpg" alt="Control de Acceso Empresarial">
+               <div class="trabajo-overlay">
+                 <div class="trabajo-info">
+                   <h3>Control de Acceso Empresarial</h3>
+                   <p>Oficinas corporativas - Sistema biométrico</p>
+                   <div class="trabajo-tags">
+                     <span class="tag">Control de Acceso</span>
+                     <span class="tag">Biométrico</span>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
 
-    <!-- SERVICIOS-->
-    <section class="servicios" id="servicios">
+           <div class="trabajo-item">
+             <div class="trabajo-image">
+               <img src="public/img/trabajos/instalacion-electrica-casa.jpg" alt="Instalación Eléctrica Residencial">
+               <div class="trabajo-overlay">
+                 <div class="trabajo-info">
+                   <h3>Instalación Eléctrica Residencial</h3>
+                   <p>Vivienda nueva - Instalación completa</p>
+                   <div class="trabajo-tags">
+                     <span class="tag">Eléctrico</span>
+                     <span class="tag">Residencial</span>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
 
-      <h2 class="heading">Nuestros Servicios</h2>
-      <div class="servicios-container">
-        <div class="servicios-box">
-          <a href="public/views/Servicios/diseño.html"><img src="public/img/imgservicios/diseño.jpg" alt=""></a>
-          <div class="servicios-layer">
-            <h4><a href="public/views/Servicios/diseño.html">Diseño</a></h4>
-          </div>
-        </div>
+           <div class="trabajo-item">
+             <div class="trabajo-image">
+               <img src="public/img/trabajos/red-wifi-empresa.jpg" alt="Red WiFi Empresarial">
+               <div class="trabajo-overlay">
+                 <div class="trabajo-info">
+                   <h3>Red WiFi Empresarial</h3>
+                   <p>Empresa industrial - Cobertura completa</p>
+                   <div class="trabajo-tags">
+                     <span class="tag">Redes</span>
+                     <span class="tag">Empresarial</span>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
 
-        <div class="servicios-box">
-          <a href="public/views/Servicios/desarrollo.html"><img src="public/img/imgservicios/desarrollo.jpg" alt=""></a>
-          <div class="servicios-layer">
-            <h4><a href="public/views/Servicios/desarrollo.html">Desarrollo</a></h4>
-          </div>
-        </div>
+           <div class="trabajo-item">
+             <div class="trabajo-image">
+               <img src="public/img/trabajos/soporte-informatico.jpg" alt="Soporte Informático">
+               <div class="trabajo-overlay">
+                 <div class="trabajo-info">
+                   <h3>Soporte Informático</h3>
+                   <p>Mantenimiento de equipos y redes</p>
+                   <div class="trabajo-tags">
+                     <span class="tag">Soporte</span>
+                     <span class="tag">IT</span>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
 
-        <div class="servicios-box">
-          <a href="public/views/Servicios/prototipados.html"><img src="public/img/imgservicios/prototipados.jpg" alt=""></a>
-          <div class="servicios-layer">
-            <h4><a href="public/views/Servicios/prototipados.html">Prototipados</a></h4>
-          </div>
-        </div>
+           <div class="trabajo-item">
+             <div class="trabajo-image">
+               <img src="public/img/trabajos/sistema-integral.jpg" alt="Sistema Integral de Seguridad">
+               <div class="trabajo-overlay">
+                 <div class="trabajo-info">
+                   <h3>Sistema Integral de Seguridad</h3>
+                   <p>Propiedad de alto valor - Protección completa</p>
+                   <div class="trabajo-tags">
+                     <span class="tag">Integral</span>
+                     <span class="tag">Premium</span>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
 
-        <div class="servicios-box">
-          <a href="public/views/Servicios/remplazodecomponentes.html"><img src="public/img/imgservicios/remplazodecomponentes.jpg" alt=""></a>
-          <div class="servicios-layer">
-            <h4><a href="public/views/Servicios/remplazodecomponentes.html">Remplazo de componentes</a></h4>
-          </div>
-        </div>
-
-        <div class="servicios-box">
-          <a href="public/views/Servicios/moldesymatrices.html"><img src="public/img/imgservicios/moldesymatrices.jpg" alt=""></a>
-          <div class="servicios-layer">
-            <h4><a href="public/views/Servicios/moldesymatrices.html">Moldes y matrices</a></h4>
-          </div>
-        </div>
-
-        <div class="servicios-box">
-          <a href="public/views/Servicios/maquetasdeestudio.html"><img src="public/img/imgservicios/maquetasdeestudio.jpg" alt=""></a>
-          <div class="servicios-layer">
-            <h4><a href="public/views/Servicios/maquetasdeestudio.html">Maquetas de estudio</a></h4>
-          </div>
-        </div>
-
-        <div class="servicios-box">
-          <a href="public/views/Servicios/piezasfuncionales.html"><img src="public/img/imgservicios/piezasfuncionales.jpg" alt=""></a>
-          <div class="servicios-layer">
-            <h4><a href="public/views/Servicios/piezasfuncionales.html">Piezas funcionales</a></h4>
-          </div>
-        </div>
-
-        <div class="servicios-box">
-          <a href="public/views/Servicios/figurasypersonajes.html"><img src="public/img/imgservicios/figurasypersonajes.jpg" alt=""></a>
-          <div class="servicios-layer">
-            <h4><a href="public/views/Servicios/figurasypersonajes.html">Figuras y personajes</a></h4>
-          </div>
-        </div>
-
-        <div class="servicios-box">
-          <a href="public/views/Servicios/muchomas.html"><img src="public/img/imgservicios/muchomas.jpg" alt=""></a>
-          <div class="servicios-layer">
-            <h4><a href="public/views/Servicios/muchomas.html">Mucho mas</a></h4>
-          </div>
-        </div>
-
-      </div>
-    </section>
+           <div class="trabajo-item">
+             <div class="trabajo-image">
+               <img src="public/img/trabajos/instalacion-portero.jpg" alt="Instalación Portero Automático">
+               <div class="trabajo-overlay">
+                 <div class="trabajo-info">
+                   <h3>Portero Automático</h3>
+                   <p>Edificio residencial - 24 departamentos</p>
+                   <div class="trabajo-tags">
+                     <span class="tag">Portero</span>
+                     <span class="tag">Edificio</span>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
 
 <!-- CONTACTO-->
-    <section class="contacto" id="contacto">
-      <h2 class="heading">¡Contáctanos!</h2>
-      <div class="contacto-content">
-        <form action="#">
-          <div class="input-box">
-            <h3 >ENVIANOS UN MAIL</h3>
-          </div>
+     <section class="contacto" id="contacto">
+       <div class="container">
+         <div class="section-header">
+           <h2 class="section-title">¡Contáctanos!</h2>
+           <p class="section-subtitle">Solicita tu presupuesto gratuito y descubre cómo podemos protegerte</p>
+         </div>
+         
+         <div class="contacto-content">
+           <div class="contacto-info">
+             <div class="info-card">
+               <div class="info-icon">
+                 <i class='bx bx-phone'></i>
+               </div>
+               <div class="info-content">
+                 <h3>Teléfono</h3>
+                 <p>+54 9 260 426-4934</p>
+                 <p>Disponible 24/7</p>
+               </div>
+             </div>
+             
+             <div class="info-card">
+               <div class="info-icon">
+                 <i class='bx bx-envelope'></i>
+               </div>
+               <div class="info-content">
+                 <h3>Email</h3>
+                 <p>info@seguridadtotal.com</p>
+                 <p>Respuesta en 24hs</p>
+               </div>
+             </div>
+             
+             <div class="info-card">
+               <div class="info-icon">
+                 <i class='bx bx-map'></i>
+               </div>
+               <div class="info-content">
+                 <h3>Ubicación</h3>
+                 <p>M. Gonzalez Balcarce 1805</p>
+                 <p>San Rafael, Mendoza</p>
+               </div>
+             </div>
+             
+             <div class="info-card">
+               <div class="info-icon">
+                 <i class='bx bx-time'></i>
+               </div>
+               <div class="info-content">
+                 <h3>Horarios</h3>
+                 <p>Lunes a Viernes: 8:00 - 18:00</p>
+                 <p>Emergencias: 24/7</p>
+               </div>
+             </div>
+           </div>
+           
+           <div class="contacto-form">
+             <form action="#" class="form">
+               <h3>Solicite su Presupuesto Gratuito</h3>
+               
+               <div class="form-group">
+                 <input type="text" placeholder="Nombre completo" required>
+               </div>
+               
+               <div class="form-group">
+                 <input type="email" placeholder="Email" required>
+               </div>
+               
+               <div class="form-group">
+                 <input type="tel" placeholder="Número de teléfono" required>
+               </div>
+               
+               <div class="form-group">
+                 <select required>
+                   <option value="">Tipo de servicio</option>
+                   <option value="alarmas">Instalación de Alarmas</option>
+                   <option value="camaras">Cámaras de Seguridad</option>
+                   <option value="control">Control de Acceso</option>
+                   <option value="electrico">Instalaciones Eléctricas</option>
+                   <option value="redes">Redes WiFi</option>
+                   <option value="integral">Sistema Integral</option>
+                 </select>
+               </div>
+               
+               <div class="form-group">
+                 <textarea placeholder="Describa su necesidad de seguridad" rows="5" required></textarea>
+               </div>
+               
+               <button type="submit" class="btn-submit">
+                 <i class='bx bx-send'></i>
+                 <span>Solicitar Presupuesto</span>
+               </button>
+             </form>
+           </div>
+         </div>
+         
+         <div class="mapa-container">
+           <iframe
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.6019002478565!2d-68.32153472351868!3d-34.63949927294132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9679a813201dbc17%3A0xc36ddd67fe0fa1e8!2sM.%20Gonzalez%20Balcarce%201805%2C%20M5600%20San%20Rafael%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1723828098832!5m2!1ses!2sar"
+             width="100%" 
+             height="400" 
+             style="border:0;" 
+             allowfullscreen="" 
+             loading="lazy" 
+             referrerpolicy="no-referrer-when-downgrade">
+           </iframe>
+         </div>
+       </div>
+     </section>
+     
+     <!-- FOOTER-->
+     <footer class="footer">
+       <div class="container">
+         <div class="footer-content">
+           <div class="footer-section">
+             <div class="footer-logo">
+               <img src="public/img/Logo2.png" alt="Seguridad Total">
+               <h3>Seguridad Total</h3>
+             </div>
+             <p>Protegiendo lo que más importa desde hace más de 10 años. 
+                Soluciones integrales de seguridad para hogares y empresas.</p>
+             <div class="social-links">
+               <a href="https://wa.me/5492604264934?text=Hola,%20me%20gustaría%20cotizar%20un%20sistema%20de%20seguridad." target="_blank">
+                 <i class='bx bxl-whatsapp'></i>
+               </a>
+               <a href="https://www.instagram.com/seguridadtotal" target="_blank">
+                 <i class='bx bxl-instagram'></i>
+               </a>
+               <a href="https://www.facebook.com/seguridadtotal" target="_blank">
+                 <i class='bx bxl-facebook'></i>
+               </a>
+             </div>
+           </div>
+           
+           <div class="footer-section">
+             <h4>Servicios</h4>
+             <ul>
+               <li><a href="public/views/Servicios/alarmas.html">Instalación de Alarmas</a></li>
+               <li><a href="public/views/Servicios/camaras.html">Cámaras de Seguridad</a></li>
+               <li><a href="public/views/Servicios/control-acceso.html">Control de Acceso</a></li>
+               <li><a href="public/views/Servicios/instalaciones-electricas.html">Instalaciones Eléctricas</a></li>
+               <li><a href="public/views/Servicios/redes-wifi.html">Redes WiFi</a></li>
+             </ul>
+           </div>
+           
+           <div class="footer-section">
+             <h4>Contacto</h4>
+             <div class="contact-info">
+               <p><i class='bx bx-phone'></i> +54 9 260 426-4934</p>
+               <p><i class='bx bx-envelope'></i> info@seguridadtotal.com</p>
+               <p><i class='bx bx-map'></i> M. Gonzalez Balcarce 1805, San Rafael</p>
+             </div>
+           </div>
+           
+           <div class="footer-section">
+             <h4>Horarios</h4>
+             <div class="schedule-info">
+               <p><strong>Lunes a Viernes:</strong> 8:00 - 18:00</p>
+               <p><strong>Sábados:</strong> 9:00 - 13:00</p>
+               <p><strong>Emergencias:</strong> 24/7</p>
+             </div>
+           </div>
+         </div>
+         
+         <div class="footer-bottom">
+           <p>&copy; 2024 Seguridad Total. Todos los derechos reservados.</p>
+           <div class="footer-links">
+             <a href="#inicio">Inicio</a>
+             <a href="#nosotros">Nosotros</a>
+             <a href="#servicios">Servicios</a>
+             <a href="#contacto">Contacto</a>
+           </div>
+         </div>
+       </div>
+       
+       <div class="back-to-top">
+         <a href="#inicio">
+           <i class="bx bx-up-arrow-alt"></i>
+         </a>
+       </div>
+     </footer>
 
-          <div class="input-box">
-            <input type="text" placeholder="Nombre completo">
-          </div>
+     <!-- scroll reveal -->
+     <script src="https://unpkg.com/scrollreveal"></script>
 
-          <div class="input-box">
-            <input type="email" placeholder="Email">
-          </div>
-    
-          <div class="input-box">
-            <input type="number" placeholder="Numero de telefono">
-          </div>
-    
-          <textarea name="" cols="30" rows="10" placeholder="Mensaje"></textarea>
-          <input type="submit" value="Enviar" class="btnenviar">
-        </form>
-    
-        <!-- Mapa de Google Maps -->
-        <div class="map-container">
-          <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.6019002478565!2d-68.32153472351868!3d-34.63949927294132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9679a813201dbc17%3A0xc36ddd67fe0fa1e8!2sM.%20Gonzalez%20Balcarce%201805%2C%20M5600%20San%20Rafael%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1723828098832!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
+     <!-- typed js -->
+     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-      </div>
-    </section>
-    
+     <!-- custom js -->
+     <script src="public/js/script.js"></script>
 
-
-
-
-
-
-<!-- FOOTER-->
-    <footer class="footer">
-      <div class="footer-text">
-        <p>Copyright &copy; Emiliano Sorato, Potrero Digital 2024</p>
-      </div>
-
-      <div class="social-media">
-        <a href="https://wa.me/5492604264934?text=Hola,%20me%20gustaría%20saber%20mas%20de%20su%20servicio."><i class='bx bxl-whatsapp'></i> </a>
-        <a href="https://www.instagram.com/emisorato" target="_blank" ><i class='bx bxl-instagram' ></i> </a>
-        <a href="https://www.linkedin.com/in/emiliano-sorato-866849269/" target="_blank"><i class='bx bxl-linkedin' ></i> </a>
-      </div>
-
-      <div class="footer-iconTop">
-        <a href="#inicio"><i class="bx bx-up-arrow-alt"></i> </a>
-      </div>
-
-    </footer>
-
-
-
-    
-    <!-- scroll reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!-- typed js -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-    <!-- custom js -->
-    <script src="public/js/script.js"></script>
-
-
-
-
-
-
-  </body>
+   </body>
 </html>
