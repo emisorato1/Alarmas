@@ -1,668 +1,1051 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seguridad Total - Instalación de Alarmas y Sistemas de Seguridad</title>
-    <meta name="description" content="Empresa especializada en instalación y mantenimiento de sistemas de seguridad integral. Protección 24/7 con tecnología de vanguardia para hogares y empresas.">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- box icons -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- custom css -->
-    <link rel="stylesheet" href="public/css/style.css" />
-    <link rel="icon" href="public/img/icon.png" type="image/png">
-  </head>
-
-  <body>
-    <!-- header design -->
-    <header class="header">
-      <div class="header-container">
-        <a href="#" class="logo">
-          <img src="public/img/Logo2.png" alt="Seguridad Total Logo" class="logo-img">
-        </a>
-
-        <nav class="navbar">
-          <a href="#inicio" class="nav-link active">INICIO</a>
-          <a href="#nosotros" class="nav-link">NOSOTROS</a>
-          <a href="#servicios" class="nav-link">SERVICIOS</a>
-          <a href="#trabajos" class="nav-link">TRABAJOS</a>
-          <a href="#contacto" class="nav-link">CONTACTO</a>
-        </nav>
-
-        <div class="header-actions">
-          <a href="https://wa.me/5492604264934?text=Hola,%20me%20gustaría%20cotizar%20un%20sistema%20de%20seguridad." class="btn-contact">
-            <i class='bx bxl-whatsapp'></i>
-            <span>WhatsApp</span>
-          </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Comunicaciones de Emergencia - Las Malvinas, San Rafael, Mendoza</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-satellite-dish"></i>
+                <span>LAS MALVINAS - SAN RAFAEL</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#monitoreo" class="nav-link">Monitoreo</a></li>
+                <li><a href="#mapas" class="nav-link">Mapas</a></li>
+                <li><a href="#alertas" class="nav-link">Alertas</a></li>
+                <li><a href="#comunicaciones" class="nav-link">Comunicaciones</a></li>
+                <li><a href="#centro-operaciones" class="nav-link">Centro Ops</a></li>
+                <li><a href="#informacion" class="nav-link">Información</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-
-        <div class="menu-toggle" id="menu-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="inicio">
-      <div class="hero-background">
-        <div class="hero-overlay"></div>
-      </div>
-      
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="hero-title">
-            <span class="highlight">SEGURIDAD TOTAL</span><br>
-            PARA SU HOGAR Y EMPRESA
-          </h1>
-          <p class="hero-subtitle">Protección 24/7 con tecnología de vanguardia</p>
-          <p class="hero-description">
-            Instalación y mantenimiento de sistemas de seguridad integral. 
-            Más de 10 años protegiendo lo que más importa.
-          </p>
-          
-          <div class="hero-actions">
-            <a href="#contacto" class="btn-primary">
-              <i class='bx bx-phone'></i>
-              <span>Solicitar Presupuesto</span>
-            </a>
-            <a href="#servicios" class="btn-secondary">
-              <i class='bx bx-shield'></i>
-              <span>Ver Servicios</span>
-            </a>
-          </div>
-
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-number">500+</span>
-              <span class="stat-label">Instalaciones</span>
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Portal de Comunicaciones de Emergencia</h1>
+                <p class="hero-subtitle">Sistema integral para gestión de comunicaciones, información y respuesta en emergencias - Distrito Las Malvinas, San Rafael, Mendoza</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="showSection('monitoreo')">
+                        <i class="fas fa-satellite-dish"></i>
+                        Monitoreo de Antenas
+                    </button>
+                    <button class="btn btn-secondary" onclick="showSection('mapas')">
+                        <i class="fas fa-map-marked-alt"></i>
+                        Mapas de Emergencia
+                    </button>
+                    <button class="btn btn-emergency" onclick="showSection('alertas')">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Sistema de Alertas
+                    </button>
+                </div>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">10+</span>
-              <span class="stat-label">Años de Experiencia</span>
+            <div class="hero-image">
+                <div class="hero-graphic">
+                    <i class="fas fa-broadcast-tower"></i>
+                </div>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">24/7</span>
-              <span class="stat-label">Soporte Técnico</span>
-            </div>
-          </div>
         </div>
-
-        <div class="hero-image">
-          <div class="image-container">
-            <img src="public/img/Logo1.png" alt="Seguridad Total" class="main-logo">
-            <div class="floating-elements">
-              <div class="element element-1">
-                <i class='bx bx-shield-check'></i>
-              </div>
-              <div class="element element-2">
-                <i class='bx bx-cctv'></i>
-              </div>
-              <div class="element element-3">
-                <i class='bx bx-lock'></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-features">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class='bx bx-cog'></i>
-          </div>
-          <h3>FULL SERVICE</h3>
-          <p>Instalación profesional y capacitada para cada necesidad</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class='bx bx-cctv'></i>
-          </div>
-          <h3>MANTENIMIENTO</h3>
-          <p>Tranquilidad y profesionalismo en cada instalación</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class='bx bx-wrench'></i>
-          </div>
-          <h3>REPARACIÓN</h3>
-          <p>Personal técnico especializado las 24hs, los 365 días</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class='bx bx-building'></i>
-          </div>
-          <h3>INSTALACIÓN EN OBRA</h3>
-          <p>Cámaras de vigilancia en sectores estratégicos</p>
-        </div>
-      </div>
     </section>
 
-     <!-- NOSOTROS-->
-     <section class="nosotros" id="nosotros">
-       <div class="nosotros-container">
-         <div class="nosotros-header">
-           <h2 class="heading">Sobre Nosotros</h2>
-           <div class="nosotros-subtitle">Más de una década protegiendo lo que más importa</div>
-         </div>
-         
-         <div class="nosotros-content">
-           <div class="nosotros-text">
-             <div class="nosotros-quote">
-               <i class='bx bx-shield-check'></i>
-               <h3>"SEGURIDAD TOTAL"</h3>
-             </div>
-             
-             <div class="nosotros-description">
-               <p class="nosotros-main-text">
-                 Somos una empresa especializada en la instalación y mantenimiento de sistemas de seguridad integral. 
-                 Con más de <strong>10 años de experiencia</strong> en el mercado, nos dedicamos a proteger lo más valioso: 
-                 <strong>su familia y su patrimonio</strong>.
-               </p>
-               
-               <p class="nosotros-secondary-text">
-                 Nuestro equipo de técnicos certificados utiliza la <strong>tecnología más avanzada</strong> para brindar 
-                 soluciones personalizadas que se adapten a sus necesidades específicas de seguridad.
-               </p>
-             </div>
-           </div>
-           
-           <div class="nosotros-features">
-             <div class="feature-item">
-               <i class='bx bx-certification'></i>
-               <h4>Certificados</h4>
-               <p>Técnicos especializados y certificados</p>
-             </div>
-             
-             <div class="feature-item">
-               <i class='bx bx-time'></i>
-               <h4>24/7</h4>
-               <p>Disponibilidad total los 365 días</p>
-             </div>
-             
-             <div class="feature-item">
-               <i class='bx bx-cog'></i>
-               <h4>Experiencia</h4>
-               <p>Más de 10 años en el mercado</p>
-             </div>
-           </div>
-         </div>
-       </div>
-     </section>
+    <!-- Monitoreo de Antenas Section -->
+    <section id="monitoreo" class="section hidden">
+        <div class="container">
+            <h2 class="section-title">Monitoreo de Antenas y Comunicaciones</h2>
+            <div class="monitoring-grid">
+                <!-- Estado de Antenas -->
+                <div class="antenna-status">
+                    <h3>Estado de Antenas</h3>
+                    <div class="antenna-list">
+                        <div class="antenna-item">
+                            <div class="antenna-info">
+                                <h4>Antena Principal - Las Malvinas</h4>
+                                <p>Ubicación: Plaza Las Malvinas, Centro Cívico</p>
+                                <p>Frecuencia: 146.520 MHz | Potencia: 50W</p>
+                                <div class="antenna-status-indicator status-operational">
+                                    <i class="fas fa-circle"></i>
+                                    Operacional
+                                </div>
+                            </div>
+                            <div class="antenna-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Señal</span>
+                                    <span class="metric-value">98%</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Cobertura</span>
+                                    <span class="metric-value">18km</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Usuarios</span>
+                                    <span class="metric-value">247</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="antenna-item">
+                            <div class="antenna-info">
+                                <h4>Antena Satelital - Villa Atuel</h4>
+                                <p>Ubicación: Zona Industrial Villa Atuel, San Rafael</p>
+                                <p>Satélite: Inmarsat | Banda: L</p>
+                                <div class="antenna-status-indicator status-warning">
+                                    <i class="fas fa-circle"></i>
+                                    Mantenimiento
+                                </div>
+                            </div>
+                            <div class="antenna-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Señal</span>
+                                    <span class="metric-value">73%</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Cobertura</span>
+                                    <span class="metric-value">12km</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Latencia</span>
+                                    <span class="metric-value">650ms</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="antenna-item">
+                            <div class="antenna-info">
+                                <h4>Antena de Emergencia - Cuadro Nacional</h4>
+                                <p>Ubicación: Base de Emergencias Cuadro Nacional, Las Malvinas</p>
+                                <p>Frecuencia: 446.000 MHz | Potencia: 25W</p>
+                                <div class="antenna-status-indicator status-offline">
+                                    <i class="fas fa-circle"></i>
+                                    Sin Conexión
+                                </div>
+                            </div>
+                            <div class="antenna-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Señal</span>
+                                    <span class="metric-value">0%</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Cobertura</span>
+                                    <span class="metric-value">0km</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Última Conexión</span>
+                                    <span class="metric-value">2h 15min</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="antenna-item">
+                            <div class="antenna-info">
+                                <h4>Antena Móvil - Ruta 143</h4>
+                                <p>Ubicación: Vehículo de Emergencia en Ruta 143, Las Malvinas</p>
+                                <p>Frecuencia: 144.800 MHz | Potencia: 20W</p>
+                                <div class="antenna-status-indicator status-operational">
+                                    <i class="fas fa-circle"></i>
+                                    Operacional
+                                </div>
+                            </div>
+                            <div class="antenna-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Señal</span>
+                                    <span class="metric-value">89%</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Cobertura</span>
+                                    <span class="metric-value">8km</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Batería</span>
+                                    <span class="metric-value">78%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-     <!-- SERVICIOS-->
-     <section class="servicios" id="servicios">
-       <div class="container">
-         <div class="section-header">
-           <h2 class="section-title">Nuestros Servicios</h2>
-           <p class="section-subtitle">Soluciones integrales de seguridad para proteger lo que más importa</p>
-         </div>
-         
-         <div class="servicios-grid">
-           <div class="servicio-card">
-             <div class="servicio-image">
-               <img src="public/img/imgservicios/alarmas.jpg" alt="Sistemas de Alarma">
-               <div class="servicio-overlay">
-                 <a href="public/views/Servicios/alarmas.html" class="btn-servicio">
-                   <i class='bx bx-right-arrow-alt'></i>
-                 </a>
-               </div>
-             </div>
-             <div class="servicio-content">
-               <h3>Instalación de Alarmas</h3>
-               <p>Sistemas de alarma residenciales y comerciales con tecnología de última generación</p>
-               <ul class="servicio-features">
-                 <li><i class='bx bx-check'></i> Sensores de movimiento</li>
-                 <li><i class='bx bx-check'></i> Detección de humo</li>
-                 <li><i class='bx bx-check'></i> Monitoreo 24/7</li>
-               </ul>
-             </div>
-           </div>
+                <!-- Red de Comunicaciones -->
+                <div class="communication-network">
+                    <h3>Red de Comunicaciones de Emergencia</h3>
+                    <div class="network-status">
+                        <div class="network-item">
+                            <i class="fas fa-radio"></i>
+                            <div>
+                                <h4>Radio Local de Emergencia</h4>
+                                <p>Frecuencia: 88.5 FM | Potencia: 10kW</p>
+                                <p>Alcance: 50km | Oyentes: 12,450</p>
+                                <span class="status-badge status-operational">Transmitiendo</span>
+                            </div>
+                        </div>
+                        <div class="network-item">
+                            <i class="fas fa-satellite"></i>
+                            <div>
+                                <h4>Satélite de Emergencia</h4>
+                                <p>Satélite: Inmarsat-5 F4 | Banda: L</p>
+                                <p>Latencia: 650ms | Ancho de banda: 2Mbps</p>
+                                <span class="status-badge status-operational">Conectado</span>
+                            </div>
+                        </div>
+                        <div class="network-item">
+                            <i class="fas fa-wifi"></i>
+                            <div>
+                                <h4>Red Móvil de Emergencia</h4>
+                                <p>Operadores: Movistar, Entel, Claro</p>
+                                <p>Cobertura: 85% | Usuarios activos: 8,230</p>
+                                <span class="status-badge status-warning">Limitada</span>
+                            </div>
+                        </div>
+                        <div class="network-item">
+                            <i class="fas fa-broadcast-tower"></i>
+                            <div>
+                                <h4>Red Troncal Digital</h4>
+                                <p>Protocolo: TETRA | Frecuencia: 380-400 MHz</p>
+                                <p>Usuarios: 156 | Canales: 8</p>
+                                <span class="status-badge status-operational">Activa</span>
+                            </div>
+                        </div>
+                        <div class="network-item">
+                            <i class="fas fa-satellite-dish"></i>
+                            <div>
+                                <h4>Comunicación Satelital Móvil</h4>
+                                <p>Terminales: 12 | Satélite: Iridium</p>
+                                <p>Estado: 10 activos, 2 en mantenimiento</p>
+                                <span class="status-badge status-operational">Operacional</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-           <div class="servicio-card">
-             <div class="servicio-image">
-               <img src="public/img/imgservicios/camaras.jpg" alt="Cámaras de Seguridad">
-               <div class="servicio-overlay">
-                 <a href="public/views/Servicios/camaras.html" class="btn-servicio">
-                   <i class='bx bx-right-arrow-alt'></i>
-                 </a>
-               </div>
-             </div>
-             <div class="servicio-content">
-               <h3>Cámaras de Seguridad</h3>
-               <p>Video vigilancia HD con grabación en la nube y acceso remoto</p>
-               <ul class="servicio-features">
-                 <li><i class='bx bx-check'></i> Cámaras IP HD</li>
-                 <li><i class='bx bx-check'></i> Visión nocturna</li>
-                 <li><i class='bx bx-check'></i> Acceso móvil</li>
-               </ul>
-             </div>
-           </div>
+    <!-- Mapas Section -->
+    <section id="mapas" class="section hidden">
+        <div class="container">
+            <h2 class="section-title">Mapas de Emergencia</h2>
+            <div class="map-controls">
+                <button class="btn btn-primary" onclick="toggleMapMode('damage')">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Mapa de Daños
+                </button>
+                <button class="btn btn-secondary" onclick="toggleMapMode('services')">
+                    <i class="fas fa-hospital"></i>
+                    Servicios
+                </button>
+                <button class="btn btn-secondary" onclick="toggleMapMode('shelters')">
+                    <i class="fas fa-home"></i>
+                    Albergues
+                </button>
+                <button class="btn btn-secondary" onclick="toggleMapMode('logistics')">
+                    <i class="fas fa-truck"></i>
+                    Logística
+                </button>
+                <div class="offline-indicator">
+                    <i class="fas fa-wifi"></i>
+                    <span>Modo Online</span>
+                </div>
+            </div>
+            <div class="map-container">
+                <div id="emergency-map"></div>
+                <div class="map-legend">
+                    <h4>Leyenda</h4>
+                    <div class="legend-item">
+                        <div class="legend-color damage"></div>
+                        <span>Daños Severos</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color moderate"></div>
+                        <span>Daños Moderados</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color minor"></div>
+                        <span>Daños Menores</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color safe"></div>
+                        <span>Zona Segura</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-           <div class="servicio-card">
-             <div class="servicio-image">
-               <img src="public/img/imgservicios/control-acceso.jpg" alt="Control de Acceso">
-               <div class="servicio-overlay">
-                 <a href="public/views/Servicios/control-acceso.html" class="btn-servicio">
-                   <i class='bx bx-right-arrow-alt'></i>
-                 </a>
-               </div>
-             </div>
-             <div class="servicio-content">
-               <h3>Control de Acceso</h3>
-               <p>Porteros automáticos y sistemas de control de acceso biométrico</p>
-               <ul class="servicio-features">
-                 <li><i class='bx bx-check'></i> Porteros automáticos</li>
-                 <li><i class='bx bx-check'></i> Lectores biométricos</li>
-                 <li><i class='bx bx-check'></i> Tarjetas de acceso</li>
-               </ul>
-             </div>
-           </div>
+    <!-- Alertas Section -->
+    <section id="alertas" class="section hidden">
+        <div class="container">
+            <h2 class="section-title">Sistema de Alertas y Notificaciones</h2>
+            <div class="alerts-grid">
+                <!-- Crear Alerta -->
+                <div class="create-alert">
+                    <h3>Crear Nueva Alerta</h3>
+                    <form class="alert-form">
+                        <div class="form-group">
+                            <label>Tipo de Alerta</label>
+                            <select id="alert-type">
+                                <option value="emergency">Emergencia</option>
+                                <option value="warning">Advertencia</option>
+                                <option value="info">Informativa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Mensaje</label>
+                            <textarea id="alert-message" placeholder="Escriba el mensaje de alerta..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Área de Cobertura</label>
+                            <select id="alert-area">
+                                <option value="all">Toda la ciudad</option>
+                                <option value="north">Zona Norte</option>
+                                <option value="south">Zona Sur</option>
+                                <option value="center">Centro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Canales de Difusión</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" checked> Radio Local</label>
+                                <label><input type="checkbox" checked> SMS Masivo</label>
+                                <label><input type="checkbox"> Redes Sociales</label>
+                                <label><input type="checkbox"> Sirena de Emergencia</label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-emergency" onclick="sendAlert()">
+                            <i class="fas fa-bullhorn"></i>
+                            Enviar Alerta
+                        </button>
+                    </form>
+                </div>
 
-           <div class="servicio-card">
-             <div class="servicio-image">
-               <img src="public/img/imgservicios/instalaciones-electricas.jpg" alt="Instalaciones Eléctricas">
-               <div class="servicio-overlay">
-                 <a href="public/views/Servicios/instalaciones-electricas.html" class="btn-servicio">
-                   <i class='bx bx-right-arrow-alt'></i>
-                 </a>
-               </div>
-             </div>
-             <div class="servicio-content">
-               <h3>Instalaciones Eléctricas</h3>
-               <p>Instalaciones eléctricas residenciales y comerciales certificadas</p>
-               <ul class="servicio-features">
-                 <li><i class='bx bx-check'></i> Instalaciones certificadas</li>
-                 <li><i class='bx bx-check'></i> Mantenimiento preventivo</li>
-                 <li><i class='bx bx-check'></i> Emergencias 24/7</li>
-               </ul>
-             </div>
-           </div>
+                <!-- Alertas Activas -->
+                <div class="active-alerts">
+                    <h3>Alertas Activas</h3>
+                    <div class="alert-list">
+                        <div class="alert-item emergency">
+                            <div class="alert-header">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <h4>Alerta de Evacuación Inmediata</h4>
+                                <span class="alert-time">Hace 8 min</span>
+                            </div>
+                            <p><strong>ZONA RIBEREÑA:</strong> Se requiere evacuación inmediata de los sectores cercanos al Río Atuel desde Calle San Martín hasta Avenida Las Malvinas debido a crecida del río. Dirigirse a puntos de encuentro designados: Club del Pueblo Las Malvinas (5Q82+8G), Escuela Primaria, Escuela Secundaria, Escuela Técnica y Jardín de Infantes.</p>
+                            <div class="alert-channels">
+                                <span class="channel">Radio 88.5 FM</span>
+                                <span class="channel">SMS Masivo</span>
+                                <span class="channel">Sirena Municipal</span>
+                                <span class="channel">Redes Sociales</span>
+                            </div>
+                            <div class="alert-stats">
+                                <span>Enviada a: 15,230 personas</span>
+                                <span>Confirmaciones: 8,450</span>
+                            </div>
+                        </div>
+                        <div class="alert-item warning">
+                            <div class="alert-header">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <h4>Corte de Energía Programado</h4>
+                                <span class="alert-time">Hace 45 min</span>
+                            </div>
+                            <p><strong>SECTOR NORTE LAS MALVINAS:</strong> Interrupción del servicio eléctrico en las manzanas 15-20 del Distrito Las Malvinas por trabajos de reparación de infraestructura dañada por vientos fuertes. Tiempo estimado de restauración: 3-4 horas.</p>
+                            <div class="alert-channels">
+                                <span class="channel">Radio 88.5 FM</span>
+                                <span class="channel">SMS Sectorial</span>
+                            </div>
+                            <div class="alert-stats">
+                                <span>Enviada a: 3,200 personas</span>
+                                <span>Confirmaciones: 1,890</span>
+                            </div>
+                        </div>
+                        <div class="alert-item info">
+                            <div class="alert-header">
+                                <i class="fas fa-info-circle"></i>
+                                <h4>Centros de Abastecimiento</h4>
+                                <span class="alert-time">Hace 2 horas</span>
+                            </div>
+                            <p><strong>INFORMACIÓN:</strong> Los centros de abastecimiento están operando en: Club del Pueblo Las Malvinas (5Q82+8G), Escuela Primaria, Escuela Secundaria, Escuela Técnica y Jardín de Infantes. Horario extendido hasta las 22:00 hrs.</p>
+                            <div class="alert-channels">
+                                <span class="channel">Radio 88.5 FM</span>
+                                <span class="channel">App Móvil</span>
+                            </div>
+                            <div class="alert-stats">
+                                <span>Enviada a: 25,000 personas</span>
+                                <span>Confirmaciones: 12,340</span>
+                            </div>
+                        </div>
+                        <div class="alert-item warning">
+                            <div class="alert-header">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <h4>Restricción de Tránsito</h4>
+                                <span class="alert-time">Hace 3 horas</span>
+                            </div>
+                            <p><strong>TRÁNSITO:</strong> Restricción vehicular en Avenida Las Malvinas entre Calle San Martín y Calle Belgrano por trabajos de limpieza post-emergencia. Usar rutas alternativas por Ruta 143.</p>
+                            <div class="alert-channels">
+                                <span class="channel">Radio 88.5 FM</span>
+                                <span class="channel">Paneles Viales</span>
+                            </div>
+                            <div class="alert-stats">
+                                <span>Enviada a: 8,500 personas</span>
+                                <span>Confirmaciones: 4,200</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-           <div class="servicio-card">
-             <div class="servicio-image">
-               <img src="public/img/imgservicios/redes-wifi.jpg" alt="Instalaciones de Redes">
-               <div class="servicio-overlay">
-                 <a href="public/views/Servicios/redes-wifi.html" class="btn-servicio">
-                   <i class='bx bx-right-arrow-alt'></i>
-                 </a>
-               </div>
-             </div>
-             <div class="servicio-content">
-               <h3>Instalaciones de Redes</h3>
-               <p>Redes WiFi empresariales y domésticas con cobertura optimizada</p>
-               <ul class="servicio-features">
-                 <li><i class='bx bx-check'></i> WiFi empresarial</li>
-                 <li><i class='bx bx-check'></i> Cobertura optimizada</li>
-                 <li><i class='bx bx-check'></i> Seguridad avanzada</li>
-               </ul>
-             </div>
-           </div>
+    <!-- Comunicaciones Section -->
+    <section id="comunicaciones" class="section hidden">
+        <div class="container">
+            <h2 class="section-title">Centro de Comunicaciones</h2>
+            <div class="communications-grid">
+                <!-- Radio Local -->
+                <div class="radio-station">
+                    <h3>Radio Local de Emergencia</h3>
+                    <div class="radio-controls">
+                        <div class="frequency-display">
+                            <span>Frecuencia: 88.5 FM</span>
+                            <div class="signal-strength">
+                                <div class="signal-bar active"></div>
+                                <div class="signal-bar active"></div>
+                                <div class="signal-bar active"></div>
+                                <div class="signal-bar"></div>
+                                <div class="signal-bar"></div>
+                            </div>
+                        </div>
+                        <div class="broadcast-controls">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-play"></i>
+                                Iniciar Transmisión
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-microphone"></i>
+                                Micrófono
+                            </button>
+                        </div>
+                    </div>
+                    <div class="broadcast-schedule">
+                        <h4>Programación de Emergencia - 15 de Enero 2025</h4>
+                        <ul>
+                            <li><strong>08:00</strong> - Boletín Informativo Matutino</li>
+                            <li><strong>10:30</strong> - Actualización Meteorológica</li>
+                            <li><strong>12:00</strong> - Estado de Servicios Básicos</li>
+                            <li><strong>14:00</strong> - Información de Albergues</li>
+                            <li><strong>16:30</strong> - Reporte de Tránsito</li>
+                            <li><strong>18:00</strong> - Resumen del Día</li>
+                            <li><strong>20:00</strong> - Mensajes de la Población</li>
+                            <li><strong>22:00</strong> - Información Nocturna</li>
+                        </ul>
+                        <div class="current-program">
+                            <strong>En Vivo:</strong> Actualización de Servicios Básicos (12:00-12:30)
+                        </div>
+                    </div>
+                </div>
 
-           <div class="servicio-card">
-             <div class="servicio-image">
-               <img src="public/img/imgservicios/enlaces-wifi.jpg" alt="Enlaces WiFi">
-               <div class="servicio-overlay">
-                 <a href="public/views/Servicios/enlaces-wifi.html" class="btn-servicio">
-                   <i class='bx bx-right-arrow-alt'></i>
-                 </a>
-               </div>
-             </div>
-             <div class="servicio-content">
-               <h3>Enlaces WiFi</h3>
-               <p>Enlaces punto a punto para conectar ubicaciones remotas</p>
-               <ul class="servicio-features">
-                 <li><i class='bx bx-check'></i> Enlaces punto a punto</li>
-                 <li><i class='bx bx-check'></i> Alta velocidad</li>
-                 <li><i class='bx bx-check'></i> Distancias largas</li>
-               </ul>
-             </div>
-           </div>
-         </div>
-       </div>
-     </section>
+                <!-- Mensajes para Población -->
+                <div class="population-messages">
+                    <h3>Mensajes para la Población</h3>
+                    <div class="message-templates">
+                        <div class="template-item">
+                            <h4>🚨 Evacuación Inmediata</h4>
+                            <p><strong>ALERTA DE EVACUACIÓN:</strong> Por seguridad, abandone inmediatamente el área afectada. Diríjase a los puntos de encuentro designados: Club del Pueblo Las Malvinas (5Q82+8G), Escuela Primaria, Escuela Secundaria, Escuela Técnica o Jardín de Infantes. Lleve solo documentos esenciales y medicamentos. Mantenga la calma y siga las instrucciones del personal de emergencia.</p>
+                            <div class="template-meta">
+                                <span>Usado: 3 veces hoy</span>
+                                <span>Último uso: 08:15</span>
+                            </div>
+                            <button class="btn btn-sm" onclick="useTemplate(this)">Usar Plantilla</button>
+                        </div>
+                        <div class="template-item">
+                            <h4>🏠 Refugio en Lugar</h4>
+                            <p><strong>REFUGIO EN LUGAR:</strong> Permanezca en interiores en un lugar seguro. Cierre puertas y ventanas, manténgase alejado de ventanas. Tenga a mano linterna, radio portátil y agua. Manténgase informado a través de Radio 88.5 FM. No salga hasta nueva orden.</p>
+                            <div class="template-meta">
+                                <span>Usado: 1 vez hoy</span>
+                                <span>Último uso: 10:30</span>
+                            </div>
+                            <button class="btn btn-sm" onclick="useTemplate(this)">Usar Plantilla</button>
+                        </div>
+                        <div class="template-item">
+                            <h4>✅ Servicios Restaurados</h4>
+                            <p><strong>INFORMACIÓN:</strong> Los servicios básicos han sido restaurados en su área. Agua potable, electricidad y comunicaciones funcionando normalmente. Mantenga la calma y continúe con las medidas de precaución. Reporte cualquier anomalía al 147.</p>
+                            <div class="template-meta">
+                                <span>Usado: 2 veces hoy</span>
+                                <span>Último uso: 11:45</span>
+                            </div>
+                            <button class="btn btn-sm" onclick="useTemplate(this)">Usar Plantilla</button>
+                        </div>
+                        <div class="template-item">
+                            <h4>🏥 Centros de Salud</h4>
+                            <p><strong>ATENCIÓN MÉDICA:</strong> Los centros de salud están operando con horario extendido. Hospital Central (24hrs), Consultorio Norte (08:00-20:00), Posta Sur (08:00-18:00). Para emergencias médicas llame al 131. Mantenga sus medicamentos a mano.</p>
+                            <div class="template-meta">
+                                <span>Usado: 0 veces hoy</span>
+                                <span>Último uso: Ayer 16:20</span>
+                            </div>
+                            <button class="btn btn-sm" onclick="useTemplate(this)">Usar Plantilla</button>
+                        </div>
+                        <div class="template-item">
+                            <h4>🚰 Agua Potable</h4>
+                            <p><strong>ABASTECIMIENTO:</strong> Puntos de distribución de agua potable habilitados en: Club del Pueblo Las Malvinas (5Q82+8G), Escuela Primaria, Escuela Secundaria, Escuela Técnica y Jardín de Infantes. Horario: 08:00-18:00. Lleve recipientes limpios. Para reportar problemas llame al 147.</p>
+                            <div class="template-meta">
+                                <span>Usado: 1 vez hoy</span>
+                                <span>Último uso: 09:30</span>
+                            </div>
+                            <button class="btn btn-sm" onclick="useTemplate(this)">Usar Plantilla</button>
+                        </div>
+                        <div class="template-item">
+                            <h4>🏫 Albergues en Escuelas</h4>
+                            <p><strong>ALBERGUES:</strong> Los albergues están funcionando en: Club del Pueblo (200 personas), Escuela Primaria (150 personas), Escuela Secundaria (120 personas), Escuela Técnica (100 personas) y Jardín de Infantes (80 personas). Total capacidad: 650 personas. Lleve documentos de identidad.</p>
+                            <div class="template-meta">
+                                <span>Usado: 2 veces hoy</span>
+                                <span>Último uso: 10:45</span>
+                            </div>
+                            <button class="btn btn-sm" onclick="useTemplate(this)">Usar Plantilla</button>
+                        </div>
+                    </div>
+                </div>
 
-     <!-- NUESTROS TRABAJOS -->
-     <section class="trabajos" id="trabajos">
-       <div class="container">
-         <div class="section-header">
-           <h2 class="section-title">Nuestros Trabajos</h2>
-           <p class="section-subtitle">Proyectos exitosos que demuestran nuestra experiencia y calidad</p>
-         </div>
-         
-         <div class="trabajos-gallery">
-           <div class="trabajo-item">
-             <div class="trabajo-image">
-               <img src="public/img/trabajos/instalacion-alarma-residencial.jpg" alt="Instalación Alarma Residencial">
-               <div class="trabajo-overlay">
-                 <div class="trabajo-info">
-                   <h3>Instalación Alarma Residencial</h3>
-                   <p>Casa en San Rafael - Sistema completo con 8 sensores</p>
-                   <div class="trabajo-tags">
-                     <span class="tag">Alarmas</span>
-                     <span class="tag">Residencial</span>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+                <!-- Boletines Periódicos -->
+                <div class="periodic-bulletins">
+                    <h3>Boletines Periódicos</h3>
+                    <div class="bulletin-controls">
+                        <button class="btn btn-primary" onclick="createBulletin()">
+                            <i class="fas fa-plus"></i>
+                            Nuevo Boletín
+                        </button>
+                        <button class="btn btn-secondary" onclick="scheduleBulletin()">
+                            <i class="fas fa-clock"></i>
+                            Programar
+                        </button>
+                    </div>
+                    <div class="bulletin-list">
+                        <div class="bulletin-item">
+                            <h4>📰 Boletín Matutino - 15/01/2025</h4>
+                            <p><strong>Resumen:</strong> Estado general de la emergencia, servicios disponibles, y recomendaciones para la población. Incluye actualización meteorológica, estado de infraestructura crítica y próximos pasos en la respuesta.</p>
+                            <div class="bulletin-content">
+                                <p><strong>Estado Actual:</strong> Fase de recuperación activa. 85% de servicios básicos restaurados.</p>
+                                <p><strong>Servicios:</strong> Agua (95%), Electricidad (78%), Comunicaciones (92%)</p>
+                                <p><strong>Próximos pasos:</strong> Limpieza de escombros, evaluación de daños estructurales</p>
+                            </div>
+                            <div class="bulletin-actions">
+                                <button class="btn btn-sm">Editar</button>
+                                <button class="btn btn-sm">Publicar</button>
+                                <button class="btn btn-sm">Programar</button>
+                            </div>
+                        </div>
+                        <div class="bulletin-item">
+                            <h4>🌤️ Actualización Meteorológica - 15/01/2025</h4>
+                            <p><strong>Pronóstico:</strong> Condiciones estables para las próximas 24 horas. Viento moderado del sureste, temperatura máxima 24°C, mínima 16°C. Sin precipitaciones esperadas.</p>
+                            <div class="bulletin-content">
+                                <p><strong>Alerta:</strong> Ninguna</p>
+                                <p><strong>Recomendación:</strong> Condiciones favorables para trabajos de limpieza y reparación</p>
+                            </div>
+                            <div class="bulletin-actions">
+                                <button class="btn btn-sm">Editar</button>
+                                <button class="btn btn-sm">Publicar</button>
+                                <button class="btn btn-sm">Programar</button>
+                            </div>
+                        </div>
+                        <div class="bulletin-item">
+                            <h4>🏥 Estado de Servicios de Salud - 15/01/2025</h4>
+                            <p><strong>Información:</strong> Todos los centros de salud operando normalmente. Hospital Central con capacidad completa, consultorios con horario extendido.</p>
+                            <div class="bulletin-content">
+                                <p><strong>Hospital Central:</strong> 24 horas, 15 camas disponibles</p>
+                                <p><strong>Consultorios:</strong> Horario extendido 08:00-20:00</p>
+                                <p><strong>Farmacias:</strong> 8 de 12 operando normalmente</p>
+                            </div>
+                            <div class="bulletin-actions">
+                                <button class="btn btn-sm">Editar</button>
+                                <button class="btn btn-sm">Publicar</button>
+                                <button class="btn btn-sm">Programar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-           <div class="trabajo-item">
-             <div class="trabajo-image">
-               <img src="public/img/trabajos/sistema-camaras-comercial.jpg" alt="Sistema de Cámaras Comercial">
-               <div class="trabajo-overlay">
-                 <div class="trabajo-info">
-                   <h3>Sistema de Cámaras Comercial</h3>
-                   <p>Local comercial - 12 cámaras HD con DVR</p>
-                   <div class="trabajo-tags">
-                     <span class="tag">Cámaras</span>
-                     <span class="tag">Comercial</span>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+    <!-- Centro de Operaciones Section -->
+    <section id="centro-operaciones" class="section hidden">
+        <div class="container">
+            <h2 class="section-title">Centro de Operaciones de Emergencia</h2>
+            <div class="operations-grid">
+                <!-- Sistema de Comando de Incidentes -->
+                <div class="incident-command">
+                    <h3>Sistema de Comando de Incidentes</h3>
+                    <div class="command-structure">
+                        <div class="command-level">
+                            <h4>Comando</h4>
+                            <div class="personnel">
+                                <div class="person">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>Comandante de Incidente - María González</span>
+                                    <span class="status available">Disponible</span>
+                                </div>
+                                <div class="person">
+                                    <i class="fas fa-user-cog"></i>
+                                    <span>Oficial de Información Pública - Carlos Ruiz</span>
+                                    <span class="status busy">En Conferencia</span>
+                                </div>
+                                <div class="person">
+                                    <i class="fas fa-user-check"></i>
+                                    <span>Oficial de Seguridad - Ana Martínez</span>
+                                    <span class="status available">Disponible</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="command-level">
+                            <h4>Operaciones</h4>
+                            <div class="personnel">
+                                <div class="person">
+                                    <i class="fas fa-user-shield"></i>
+                                    <span>Jefe de Operaciones - Roberto Silva</span>
+                                    <span class="status busy">En Campo</span>
+                                </div>
+                                <div class="person">
+                                    <i class="fas fa-ambulance"></i>
+                                    <span>Jefe de Rescate - Dr. Luis Herrera</span>
+                                    <span class="status available">Disponible</span>
+                                </div>
+                                <div class="person">
+                                    <i class="fas fa-fire"></i>
+                                    <span>Jefe de Bomberos - Pedro Morales</span>
+                                    <span class="status busy">En Emergencia</span>
+                                </div>
+                                <div class="person">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Jefe de Seguridad - Carmen Díaz</span>
+                                    <span class="status available">Disponible</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="command-level">
+                            <h4>Logística</h4>
+                            <div class="personnel">
+                                <div class="person">
+                                    <i class="fas fa-truck"></i>
+                                    <span>Jefe de Suministros - Miguel Torres</span>
+                                    <span class="status available">Disponible</span>
+                                </div>
+                                <div class="person">
+                                    <i class="fas fa-tools"></i>
+                                    <span>Jefe de Equipos - Elena Vargas</span>
+                                    <span class="status warning">Mantenimiento</span>
+                                </div>
+                                <div class="person">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Jefe de Alimentación - José Ramírez</span>
+                                    <span class="status available">Disponible</span>
+                                </div>
+                                <div class="person">
+                                    <i class="fas fa-bed"></i>
+                                    <span>Jefe de Albergues - Patricia López</span>
+                                    <span class="status busy">En Campo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="command-level">
+                            <h4>Planificación</h4>
+                            <div class="personnel">
+                                <div class="person">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Jefe de Planificación - Fernando Castro</span>
+                                    <span class="status available">Disponible</span>
+                                </div>
+                                <div class="person">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <span>Oficial de Situación - Isabel Rojas</span>
+                                    <span class="status busy">Actualizando Mapas</span>
+                                </div>
+                                <div class="person">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    <span>Oficial de Documentación - Andrés Muñoz</span>
+                                    <span class="status available">Disponible</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-           <div class="trabajo-item">
-             <div class="trabajo-image">
-               <img src="public/img/trabajos/control-acceso-empresa.jpg" alt="Control de Acceso Empresarial">
-               <div class="trabajo-overlay">
-                 <div class="trabajo-info">
-                   <h3>Control de Acceso Empresarial</h3>
-                   <p>Oficinas corporativas - Sistema biométrico</p>
-                   <div class="trabajo-tags">
-                     <span class="tag">Control de Acceso</span>
-                     <span class="tag">Biométrico</span>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+                <!-- Inventario de Medios -->
+                <div class="media-inventory">
+                    <h3>Inventario de Medios</h3>
+                    <div class="inventory-categories">
+                        <div class="category">
+                            <h4>Equipos de Comunicación</h4>
+                            <div class="inventory-items">
+                                <div class="item">
+                                    <span>Radios Portátiles VHF</span>
+                                    <span class="quantity">28/35</span>
+                                </div>
+                                <div class="item">
+                                    <span>Radios Base UHF</span>
+                                    <span class="quantity">12/15</span>
+                                </div>
+                                <div class="item">
+                                    <span>Terminales Satelitales</span>
+                                    <span class="quantity">8/10</span>
+                                </div>
+                                <div class="item">
+                                    <span>Repetidoras Móviles</span>
+                                    <span class="quantity">4/6</span>
+                                </div>
+                                <div class="item">
+                                    <span>Antenas Direccionales</span>
+                                    <span class="quantity">15/20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <h4>Equipos de Emergencia</h4>
+                            <div class="inventory-items">
+                                <div class="item">
+                                    <span>Generadores Diesel (10kW)</span>
+                                    <span class="quantity">8/10</span>
+                                </div>
+                                <div class="item">
+                                    <span>Generadores Portátiles (2kW)</span>
+                                    <span class="quantity">15/20</span>
+                                </div>
+                                <div class="item">
+                                    <span>Equipos Médicos de Emergencia</span>
+                                    <span class="quantity">25/30</span>
+                                </div>
+                                <div class="item">
+                                    <span>Refugios Móviles (20 personas)</span>
+                                    <span class="quantity">6/8</span>
+                                </div>
+                                <div class="item">
+                                    <span>Unidades de Purificación de Agua</span>
+                                    <span class="quantity">4/5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <h4>Vehículos y Transporte</h4>
+                            <div class="inventory-items">
+                                <div class="item">
+                                    <span>Ambulancias</span>
+                                    <span class="quantity">6/8</span>
+                                </div>
+                                <div class="item">
+                                    <span>Camiones de Rescate</span>
+                                    <span class="quantity">3/4</span>
+                                </div>
+                                <div class="item">
+                                    <span>Vehículos de Comando</span>
+                                    <span class="quantity">2/3</span>
+                                </div>
+                                <div class="item">
+                                    <span>Motocicletas de Emergencia</span>
+                                    <span class="quantity">8/10</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <h4>Suministros Básicos - Escuelas y Club</h4>
+                            <div class="inventory-items">
+                                <div class="item">
+                                    <span>Agua Potable (litros)</span>
+                                    <span class="quantity">15,000/20,000</span>
+                                </div>
+                                <div class="item">
+                                    <span>Raciones de Emergencia</span>
+                                    <span class="quantity">2,500/3,000</span>
+                                </div>
+                                <div class="item">
+                                    <span>Mantas de Emergencia</span>
+                                    <span class="quantity">800/1,000</span>
+                                </div>
+                                <div class="item">
+                                    <span>Linternas y Baterías</span>
+                                    <span class="quantity">150/200</span>
+                                </div>
+                                <div class="item">
+                                    <span>Capacidad Total Albergues</span>
+                                    <span class="quantity">650/750 personas</span>
+                                </div>
+                                <div class="item">
+                                    <span>Puntos de Atención Médica</span>
+                                    <span class="quantity">5/5 activos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-           <div class="trabajo-item">
-             <div class="trabajo-image">
-               <img src="public/img/trabajos/instalacion-electrica-casa.jpg" alt="Instalación Eléctrica Residencial">
-               <div class="trabajo-overlay">
-                 <div class="trabajo-info">
-                   <h3>Instalación Eléctrica Residencial</h3>
-                   <p>Vivienda nueva - Instalación completa</p>
-                   <div class="trabajo-tags">
-                     <span class="tag">Eléctrico</span>
-                     <span class="tag">Residencial</span>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+                <!-- Monitoreo de Desinformación -->
+                <div class="misinformation-monitoring">
+                    <h3>Monitoreo de Desinformación</h3>
+                    <div class="monitoring-stats">
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Noticias Falsas Detectadas</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Rumores Verificados</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Precisión de Información</span>
+                        </div>
+                    </div>
+                    <div class="misinformation-list">
+                        <div class="misinfo-item">
+                            <div class="misinfo-header">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <h4>Rumor: "Hospital Central colapsado"</h4>
+                                <span class="status false">FALSO</span>
+                            </div>
+                            <p><strong>Verificado:</strong> El Hospital Central está operando normalmente con personal adicional. Capacidad: 85% ocupación. Fuente: Dr. Luis Herrera, Jefe de Rescate.</p>
+                            <div class="misinfo-details">
+                                <span>Detectado: 14:30</span>
+                                <span>Fuente: Redes Sociales</span>
+                                <span>Alcance: 1,250 personas</span>
+                            </div>
+                        </div>
+                        <div class="misinfo-item">
+                            <div class="misinfo-header">
+                                <i class="fas fa-check-circle"></i>
+                                <h4>Información: "Corte de agua sector norte"</h4>
+                                <span class="status true">VERIFICADO</span>
+                            </div>
+                            <p><strong>Confirmado:</strong> Interrupción temporal en el sector norte por reparaciones de infraestructura dañada. Tiempo estimado: 3-4 horas. Fuente: Empresa de Agua Potable.</p>
+                            <div class="misinfo-details">
+                                <span>Verificado: 12:15</span>
+                                <span>Fuente: Oficial</span>
+                                <span>Alcance: 3,200 personas</span>
+                            </div>
+                        </div>
+                        <div class="misinfo-item">
+                            <div class="misinfo-header">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <h4>Rumor: "Nueva alerta de tsunami"</h4>
+                                <span class="status false">FALSO</span>
+                            </div>
+                            <p><strong>Verificado:</strong> No hay alerta de tsunami activa. El SHOA no ha emitido ninguna alerta. La evacuación anterior fue por precaución. Fuente: SHOA Oficial.</p>
+                            <div class="misinfo-details">
+                                <span>Detectado: 15:45</span>
+                                <span>Fuente: WhatsApp</span>
+                                <span>Alcance: 2,800 personas</span>
+                            </div>
+                        </div>
+                        <div class="misinfo-item">
+                            <div class="misinfo-header">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <h4>Rumor: "Falta de alimentos en albergues"</h4>
+                                <span class="status false">FALSO</span>
+                            </div>
+                            <p><strong>Verificado:</strong> Los albergues tienen suministros suficientes para 48 horas. Se está distribuyendo comida caliente y agua potable. Fuente: Patricia López, Jefa de Albergues.</p>
+                            <div class="misinfo-details">
+                                <span>Detectado: 16:20</span>
+                                <span>Fuente: Redes Sociales</span>
+                                <span>Alcance: 950 personas</span>
+                            </div>
+                        </div>
+                        <div class="misinfo-item">
+                            <div class="misinfo-header">
+                                <i class="fas fa-check-circle"></i>
+                                <h4>Información: "Restricción de tránsito Avenida Principal"</h4>
+                                <span class="status true">VERIFICADO</span>
+                            </div>
+                            <p><strong>Confirmado:</strong> Restricción vehicular entre Calle 5 y Calle 12 por trabajos de limpieza. Usar rutas alternativas. Fuente: Jefe de Tránsito Municipal.</p>
+                            <div class="misinfo-details">
+                                <span>Verificado: 11:30</span>
+                                <span>Fuente: Oficial</span>
+                                <span>Alcance: 8,500 personas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-           <div class="trabajo-item">
-             <div class="trabajo-image">
-               <img src="public/img/trabajos/red-wifi-empresa.jpg" alt="Red WiFi Empresarial">
-               <div class="trabajo-overlay">
-                 <div class="trabajo-info">
-                   <h3>Red WiFi Empresarial</h3>
-                   <p>Empresa industrial - Cobertura completa</p>
-                   <div class="trabajo-tags">
-                     <span class="tag">Redes</span>
-                     <span class="tag">Empresarial</span>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+    <!-- Información Section -->
+    <section id="informacion" class="section hidden">
+        <div class="container">
+            <h2 class="section-title">Centro de Información</h2>
+            <div class="information-grid">
+                <!-- Portal de Datos -->
+                <div class="data-portal">
+                    <h3>Portal de Datos</h3>
+                    <div class="data-sources">
+                        <div class="data-source">
+                            <i class="fas fa-database"></i>
+                            <h4>Datos Meteorológicos</h4>
+                            <p>Información en tiempo real del clima</p>
+                            <p>Fuente: DMC, SHOA, Estaciones Locales</p>
+                            <p>Última actualización: 12:45</p>
+                            <span class="status operational">Activo</span>
+                        </div>
+                        <div class="data-source">
+                            <i class="fas fa-heartbeat"></i>
+                            <h4>Salud Pública</h4>
+                            <p>Estadísticas de salud y emergencias médicas</p>
+                            <p>Fuente: Hospitales, Consultorios, Postas</p>
+                            <p>Última actualización: 12:30</p>
+                            <span class="status operational">Activo</span>
+                        </div>
+                        <div class="data-source">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Seguridad</h4>
+                            <p>Reportes de seguridad y orden público</p>
+                            <p>Fuente: Carabineros, PDI, Seguridad Municipal</p>
+                            <p>Última actualización: 11:20</p>
+                            <span class="status warning">Limitado</span>
+                        </div>
+                        <div class="data-source">
+                            <i class="fas fa-tools"></i>
+                            <h4>Infraestructura</h4>
+                            <p>Estado de servicios básicos y vías</p>
+                            <p>Fuente: Empresas de Servicios, MOP</p>
+                            <p>Última actualización: 12:00</p>
+                            <span class="status operational">Activo</span>
+                        </div>
+                        <div class="data-source">
+                            <i class="fas fa-users"></i>
+                            <h4>Población</h4>
+                            <p>Censos de albergues y evacuados</p>
+                            <p>Fuente: Albergues, Puntos de Encuentro</p>
+                            <p>Última actualización: 12:15</p>
+                            <span class="status operational">Activo</span>
+                        </div>
+                    </div>
+                </div>
 
-           <div class="trabajo-item">
-             <div class="trabajo-image">
-               <img src="public/img/trabajos/soporte-informatico.jpg" alt="Soporte Informático">
-               <div class="trabajo-overlay">
-                 <div class="trabajo-info">
-                   <h3>Soporte Informático</h3>
-                   <p>Mantenimiento de equipos y redes</p>
-                   <div class="trabajo-tags">
-                     <span class="tag">Soporte</span>
-                     <span class="tag">IT</span>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+                <!-- App Móvil -->
+                <div class="mobile-app">
+                    <h3>Aplicación Móvil de Emergencia</h3>
+                    <div class="app-features">
+                        <div class="feature">
+                            <i class="fas fa-bell"></i>
+                            <h4>Alertas Push</h4>
+                            <p>Notificaciones instantáneas de emergencia</p>
+                            <span class="feature-stats">15,230 usuarios activos</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-map"></i>
+                            <h4>Mapas Offline</h4>
+                            <p>Navegación sin conexión a internet</p>
+                            <span class="feature-stats">Cobertura: 50km²</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-phone"></i>
+                            <h4>Contactos de Emergencia</h4>
+                            <p>Números de emergencia y servicios</p>
+                            <span class="feature-stats">25 contactos disponibles</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-info-circle"></i>
+                            <h4>Información Local</h4>
+                            <p>Datos actualizados de la situación</p>
+                            <span class="feature-stats">Actualización cada 5 min</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-radio"></i>
+                            <h4>Radio en Vivo</h4>
+                            <p>Escucha Radio 88.5 FM en tiempo real</p>
+                            <span class="feature-stats">2,450 oyentes en línea</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-share-alt"></i>
+                            <h4>Compartir Ubicación</h4>
+                            <p>Envía tu ubicación a familiares</p>
+                            <span class="feature-stats">1,890 ubicaciones compartidas</span>
+                        </div>
+                    </div>
+                    <div class="app-download">
+                        <button class="btn btn-primary">
+                            <i class="fab fa-android"></i>
+                            Descargar Android
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fab fa-apple"></i>
+                            Descargar iOS
+                        </button>
+                    </div>
+                </div>
 
-           <div class="trabajo-item">
-             <div class="trabajo-image">
-               <img src="public/img/trabajos/sistema-integral.jpg" alt="Sistema Integral de Seguridad">
-               <div class="trabajo-overlay">
-                 <div class="trabajo-info">
-                   <h3>Sistema Integral de Seguridad</h3>
-                   <p>Propiedad de alto valor - Protección completa</p>
-                   <div class="trabajo-tags">
-                     <span class="tag">Integral</span>
-                     <span class="tag">Premium</span>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+                <!-- Reportes y Analytics -->
+                <div class="reports-analytics">
+                    <h3>Reportes y Analytics</h3>
+                    <div class="report-cards">
+                        <div class="report-card">
+                            <h4>Cobertura de Comunicaciones</h4>
+                            <div class="report-chart">
+                                <div class="chart-bar">
+                                    <div class="bar-fill" style="width: 85%"></div>
+                                </div>
+                                <span>85% de la población cubierta</span>
+                            </div>
+                        </div>
+                        <div class="report-card">
+                            <h4>Tiempo de Respuesta</h4>
+                            <div class="report-chart">
+                                <div class="chart-bar">
+                                    <div class="bar-fill" style="width: 92%"></div>
+                                </div>
+                                <span>Promedio: 3.2 minutos</span>
+                            </div>
+                        </div>
+                        <div class="report-card">
+                            <h4>Alertas Enviadas</h4>
+                            <div class="report-chart">
+                                <div class="chart-bar">
+                                    <div class="bar-fill" style="width: 78%"></div>
+                                </div>
+                                <span>156 alertas este mes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-           <div class="trabajo-item">
-             <div class="trabajo-image">
-               <img src="public/img/trabajos/instalacion-portero.jpg" alt="Instalación Portero Automático">
-               <div class="trabajo-overlay">
-                 <div class="trabajo-info">
-                   <h3>Portero Automático</h3>
-                   <p>Edificio residencial - 24 departamentos</p>
-                   <div class="trabajo-tags">
-                     <span class="tag">Portero</span>
-                     <span class="tag">Edificio</span>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Portal de Comunicaciones de Emergencia</h4>
+                    <p>Sistema integral para la gestión de comunicaciones y respuesta en emergencias - Distrito Las Malvinas, San Rafael, Mendoza</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contactos de Emergencia</h4>
+                    <ul>
+                        <li>Emergencias: 911</li>
+                        <li>Radio Local: 88.5 FM</li>
+                        <li>Centro de Operaciones: (0260) 442-1234</li>
+                        <li>Municipalidad San Rafael: (0260) 442-0000</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#monitoreo">Monitoreo</a></li>
+                        <li><a href="#mapas">Mapas</a></li>
+                        <li><a href="#alertas">Alertas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Portal de Comunicaciones de Emergencia - Distrito Las Malvinas, San Rafael, Mendoza. Sistema SPRINT 2025.</p>
+            </div>
+        </div>
+    </footer>
 
-<!-- CONTACTO-->
-     <section class="contacto" id="contacto">
-       <div class="container">
-         <div class="section-header">
-           <h2 class="section-title">¡Contáctanos!</h2>
-           <p class="section-subtitle">Solicita tu presupuesto gratuito y descubre cómo podemos protegerte</p>
-         </div>
-         
-         <div class="contacto-content">
-           <div class="contacto-info">
-             <div class="info-card">
-               <div class="info-icon">
-                 <i class='bx bx-phone'></i>
-               </div>
-               <div class="info-content">
-                 <h3>Teléfono</h3>
-                 <p>+54 9 260 426-4934</p>
-                 <p>Disponible 24/7</p>
-               </div>
-             </div>
-             
-             <div class="info-card">
-               <div class="info-icon">
-                 <i class='bx bx-envelope'></i>
-               </div>
-               <div class="info-content">
-                 <h3>Email</h3>
-                 <p>info@seguridadtotal.com</p>
-                 <p>Respuesta en 24hs</p>
-               </div>
-             </div>
-             
-             <div class="info-card">
-               <div class="info-icon">
-                 <i class='bx bx-map'></i>
-               </div>
-               <div class="info-content">
-                 <h3>Ubicación</h3>
-                 <p>M. Gonzalez Balcarce 1805</p>
-                 <p>San Rafael, Mendoza</p>
-               </div>
-             </div>
-             
-             <div class="info-card">
-               <div class="info-icon">
-                 <i class='bx bx-time'></i>
-               </div>
-               <div class="info-content">
-                 <h3>Horarios</h3>
-                 <p>Lunes a Viernes: 8:00 - 18:00</p>
-                 <p>Emergencias: 24/7</p>
-               </div>
-             </div>
-           </div>
-           
-           <div class="contacto-form">
-             <form action="#" class="form">
-               <h3>Solicite su Presupuesto Gratuito</h3>
-               
-               <div class="form-group">
-                 <input type="text" placeholder="Nombre completo" required>
-               </div>
-               
-               <div class="form-group">
-                 <input type="email" placeholder="Email" required>
-               </div>
-               
-               <div class="form-group">
-                 <input type="tel" placeholder="Número de teléfono" required>
-               </div>
-               
-               <div class="form-group">
-                 <select required>
-                   <option value="">Tipo de servicio</option>
-                   <option value="alarmas">Instalación de Alarmas</option>
-                   <option value="camaras">Cámaras de Seguridad</option>
-                   <option value="control">Control de Acceso</option>
-                   <option value="electrico">Instalaciones Eléctricas</option>
-                   <option value="redes">Redes WiFi</option>
-                   <option value="integral">Sistema Integral</option>
-                 </select>
-               </div>
-               
-               <div class="form-group">
-                 <textarea placeholder="Describa su necesidad de seguridad" rows="5" required></textarea>
-               </div>
-               
-               <button type="submit" class="btn-submit">
-                 <i class='bx bx-send'></i>
-                 <span>Solicitar Presupuesto</span>
-               </button>
-             </form>
-           </div>
-         </div>
-         
-         <div class="mapa-container">
-           <iframe
-             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.6019002478565!2d-68.32153472351868!3d-34.63949927294132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9679a813201dbc17%3A0xc36ddd67fe0fa1e8!2sM.%20Gonzalez%20Balcarce%201805%2C%20M5600%20San%20Rafael%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1723828098832!5m2!1ses!2sar"
-             width="100%" 
-             height="400" 
-             style="border:0;" 
-             allowfullscreen="" 
-             loading="lazy" 
-             referrerpolicy="no-referrer-when-downgrade">
-           </iframe>
-         </div>
-       </div>
-     </section>
-     
-     <!-- FOOTER-->
-     <footer class="footer">
-       <div class="container">
-         <div class="footer-content">
-           <div class="footer-section">
-             <div class="footer-logo">
-               <img src="public/img/Logo2.png" alt="Seguridad Total">
-               <h3>Seguridad Total</h3>
-             </div>
-             <p>Protegiendo lo que más importa desde hace más de 10 años. 
-                Soluciones integrales de seguridad para hogares y empresas.</p>
-             <div class="social-links">
-               <a href="https://wa.me/5492604264934?text=Hola,%20me%20gustaría%20cotizar%20un%20sistema%20de%20seguridad." target="_blank">
-                 <i class='bx bxl-whatsapp'></i>
-               </a>
-               <a href="https://www.instagram.com/seguridadtotal" target="_blank">
-                 <i class='bx bxl-instagram'></i>
-               </a>
-               <a href="https://www.facebook.com/seguridadtotal" target="_blank">
-                 <i class='bx bxl-facebook'></i>
-               </a>
-             </div>
-           </div>
-           
-           <div class="footer-section">
-             <h4>Servicios</h4>
-             <ul>
-               <li><a href="public/views/Servicios/alarmas.html">Instalación de Alarmas</a></li>
-               <li><a href="public/views/Servicios/camaras.html">Cámaras de Seguridad</a></li>
-               <li><a href="public/views/Servicios/control-acceso.html">Control de Acceso</a></li>
-               <li><a href="public/views/Servicios/instalaciones-electricas.html">Instalaciones Eléctricas</a></li>
-               <li><a href="public/views/Servicios/redes-wifi.html">Redes WiFi</a></li>
-             </ul>
-           </div>
-           
-           <div class="footer-section">
-             <h4>Contacto</h4>
-             <div class="contact-info">
-               <p><i class='bx bx-phone'></i> +54 9 260 426-4934</p>
-               <p><i class='bx bx-envelope'></i> info@seguridadtotal.com</p>
-               <p><i class='bx bx-map'></i> M. Gonzalez Balcarce 1805, San Rafael</p>
-             </div>
-           </div>
-           
-           <div class="footer-section">
-             <h4>Horarios</h4>
-             <div class="schedule-info">
-               <p><strong>Lunes a Viernes:</strong> 8:00 - 18:00</p>
-               <p><strong>Sábados:</strong> 9:00 - 13:00</p>
-               <p><strong>Emergencias:</strong> 24/7</p>
-             </div>
-           </div>
-         </div>
-         
-         <div class="footer-bottom">
-           <p>&copy; 2024 Seguridad Total. Todos los derechos reservados.</p>
-           <div class="footer-links">
-             <a href="#inicio">Inicio</a>
-             <a href="#nosotros">Nosotros</a>
-             <a href="#servicios">Servicios</a>
-             <a href="#contacto">Contacto</a>
-           </div>
-         </div>
-       </div>
-       
-       <div class="back-to-top">
-         <a href="#inicio">
-           <i class="bx bx-up-arrow-alt"></i>
-         </a>
-       </div>
-     </footer>
-
-     <!-- scroll reveal -->
-     <script src="https://unpkg.com/scrollreveal"></script>
-
-     <!-- typed js -->
-     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-     <!-- custom js -->
-     <script src="public/js/script.js"></script>
-
-   </body>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>

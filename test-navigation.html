@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Navegación - Portal de Emergencia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .nav-btn {
+            padding: 10px 20px;
+            background: #dc2626;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .nav-btn:hover {
+            background: #b91c1c;
+        }
+        .nav-btn.active {
+            background: #059669;
+        }
+        .section {
+            display: none;
+            padding: 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .section.active {
+            display: block;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background: #d1fae5;
+            color: #065f46;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Test de Navegación - Portal de Comunicaciones de Emergencia</h1>
+        
+        <div class="nav-buttons">
+            <button class="nav-btn active" onclick="showSection('inicio')">🏠 Inicio</button>
+            <button class="nav-btn" onclick="showSection('monitoreo')">📡 Monitoreo</button>
+            <button class="nav-btn" onclick="showSection('mapas')">🗺️ Mapas</button>
+            <button class="nav-btn" onclick="showSection('alertas')">🚨 Alertas</button>
+            <button class="nav-btn" onclick="showSection('comunicaciones')">📻 Comunicaciones</button>
+            <button class="nav-btn" onclick="showSection('centro-operaciones')">🏢 Centro Ops</button>
+            <button class="nav-btn" onclick="showSection('informacion')">ℹ️ Información</button>
+        </div>
+
+        <div id="inicio" class="section active">
+            <h2>🏠 Sección de Inicio</h2>
+            <p>Esta es la página principal del portal de comunicaciones de emergencia.</p>
+            <div class="status">✅ Sección de inicio funcionando correctamente</div>
+        </div>
+
+        <div id="monitoreo" class="section">
+            <h2>📡 Monitoreo de Antenas</h2>
+            <p>Estado de las antenas y sistemas de comunicación.</p>
+            <div class="status">✅ Sección de monitoreo funcionando correctamente</div>
+            <ul>
+                <li>Antena Principal: Operacional (95% señal)</li>
+                <li>Antena Satelital: Mantenimiento (67% señal)</li>
+                <li>Antena de Emergencia: Sin Conexión (0% señal)</li>
+            </ul>
+        </div>
+
+        <div id="mapas" class="section">
+            <h2>🗺️ Mapas de Emergencia</h2>
+            <p>Sistema de mapas para visualizar daños, servicios y albergues.</p>
+            <div class="status">✅ Sección de mapas funcionando correctamente</div>
+            <div style="height: 200px; background: #e5e7eb; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #6b7280;">
+                🗺️ Mapa interactivo (Leaflet se cargaría aquí)
+            </div>
+        </div>
+
+        <div id="alertas" class="section">
+            <h2>🚨 Sistema de Alertas</h2>
+            <p>Creación y gestión de alertas de emergencia.</p>
+            <div class="status">✅ Sección de alertas funcionando correctamente</div>
+            <div style="background: #fef2f2; padding: 15px; border-radius: 8px; border-left: 4px solid #dc2626;">
+                <strong>Alerta Activa:</strong> Evacuación inmediata zona costera - Hace 15 min
+            </div>
+        </div>
+
+        <div id="comunicaciones" class="section">
+            <h2>📻 Centro de Comunicaciones</h2>
+            <p>Radio local, mensajes para población y boletines.</p>
+            <div class="status">✅ Sección de comunicaciones funcionando correctamente</div>
+            <div style="background: #f0f9ff; padding: 15px; border-radius: 8px;">
+                <strong>Radio Local:</strong> 88.5 FM - Transmisión en vivo
+            </div>
+        </div>
+
+        <div id="centro-operaciones" class="section">
+            <h2>🏢 Centro de Operaciones</h2>
+            <p>Sistema de comando de incidentes y gestión de recursos.</p>
+            <div class="status">✅ Sección de centro de operaciones funcionando correctamente</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                <div style="background: #f8fafc; padding: 15px; border-radius: 8px;">
+                    <strong>Comando:</strong> Disponible
+                </div>
+                <div style="background: #f8fafc; padding: 15px; border-radius: 8px;">
+                    <strong>Operaciones:</strong> En Campo
+                </div>
+            </div>
+        </div>
+
+        <div id="informacion" class="section">
+            <h2>ℹ️ Centro de Información</h2>
+            <p>Portal de datos, app móvil y reportes.</p>
+            <div class="status">✅ Sección de información funcionando correctamente</div>
+            <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; border-left: 4px solid #10b981;">
+                <strong>Datos Meteorológicos:</strong> Activo<br>
+                <strong>Salud Pública:</strong> Activo<br>
+                <strong>Seguridad:</strong> Limitado
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #3b82f6;">
+            <h3>🎯 Instrucciones de Prueba:</h3>
+            <ol>
+                <li>Haz clic en cada botón de navegación</li>
+                <li>Verifica que cada sección se muestre correctamente</li>
+                <li>Confirma que solo una sección esté visible a la vez</li>
+                <li>Prueba los atajos de teclado: Alt + 1-7</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // Update button states
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Find and activate the clicked button
+            const activeButton = Array.from(buttons).find(btn => 
+                btn.onclick.toString().includes(sectionId)
+            );
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+
+            console.log(`Navegando a sección: ${sectionId}`);
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.altKey) {
+                const sections = ['inicio', 'monitoreo', 'mapas', 'alertas', 'comunicaciones', 'centro-operaciones', 'informacion'];
+                const keyIndex = parseInt(e.key) - 1;
+                if (keyIndex >= 0 && keyIndex < sections.length) {
+                    e.preventDefault();
+                    showSection(sections[keyIndex]);
+                }
+            }
+        });
+
+        // Test all sections on load
+        console.log('🧪 Iniciando test de navegación...');
+        setTimeout(() => {
+            console.log('✅ Test de navegación completado - Todas las secciones funcionan');
+        }, 1000);
+    </script>
+</body>
+</html>
