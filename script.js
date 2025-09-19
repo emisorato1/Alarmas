@@ -129,7 +129,7 @@ function initializeMap() {
     const mapContainer = document.getElementById('emergency-map');
     if (mapContainer && !emergencyMap) {
         try {
-            emergencyMap = L.map('emergency-map').setView([-34.8333, -68.25], 15);
+            emergencyMap = L.map('emergency-map').setView([-34.6177, -68.3301], 13);
             
             // Add OpenStreetMap tiles
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -177,30 +177,38 @@ function updateMapMarkers() {
 function addMapMarkers() {
     const markers = {
         damage: [
-            {lat: -34.8333, lng: -68.25, type: 'severe', title: 'Daños Severos - Club del Pueblo Las Malvinas'},
-            {lat: -34.8350, lng: -68.2480, type: 'moderate', title: 'Daños Moderados - Zona Residencial'},
-            {lat: -34.8310, lng: -68.2520, type: 'minor', title: 'Daños Menores - Sector Comercial'}
+            {lat: -34.6177, lng: -68.3301, type: 'severe', title: 'Hospital Teodoro J. Schestakow - Derrumbe parcial 3 pisos superiores'},
+            {lat: -34.6180, lng: -68.3280, type: 'severe', title: 'Hotel Tower - Colapso estructural total'},
+            {lat: -34.6200, lng: -68.3250, type: 'moderate', title: 'Barrios Urbanos - Grietas profundas y derrumbes parciales'},
+            {lat: -34.8333, lng: -68.25, type: 'moderate', title: 'Distrito Las Malvinas - Daños por réplica'},
+            {lat: -34.6150, lng: -68.3320, type: 'minor', title: 'Zona Centro - Daños menores en edificios públicos'}
         ],
         services: [
-            {lat: -34.8333, lng: -68.25, type: 'hospital', title: 'Club del Pueblo - Punto de Atención Médica'},
-            {lat: -34.8300, lng: -68.2450, type: 'hospital', title: 'Escuela Primaria - Punto de Atención'},
-            {lat: -34.8320, lng: -68.2480, type: 'hospital', title: 'Escuela Secundaria - Punto de Atención'},
-            {lat: -34.8340, lng: -68.2520, type: 'police', title: 'Club del Pueblo - Puesto de Seguridad'},
-            {lat: -34.8310, lng: -68.2460, type: 'fire', title: 'Escuela Primaria - Puesto de Bomberos'}
+            {lat: -34.6177, lng: -68.3301, type: 'hospital', title: 'Hospital Teodoro J. Schestakow - Servicios limitados por daños'},
+            {lat: -34.6185, lng: -68.3285, type: 'hospital', title: 'Hospital Central San Rafael - Servicios de emergencia 24h'},
+            {lat: -34.6200, lng: -68.3250, type: 'hospital', title: 'Consultorio Norte - Atención extendida'},
+            {lat: -34.6150, lng: -68.3320, type: 'police', title: 'Comisaría Central - Puesto de Seguridad'},
+            {lat: -34.6160, lng: -68.3300, type: 'fire', title: 'Bomberos San Rafael - Base de Emergencia'},
+            {lat: -34.8333, lng: -68.25, type: 'hospital', title: 'Club del Pueblo Las Malvinas - Punto de Atención'},
+            {lat: -34.8300, lng: -68.2450, type: 'hospital', title: 'Escuela Primaria Las Malvinas - Punto de Atención'}
         ],
         shelters: [
-            {lat: -34.8333, lng: -68.25, type: 'shelter', title: 'Club del Pueblo - Albergue Principal (200 personas)'},
-            {lat: -34.8300, lng: -68.2450, type: 'shelter', title: 'Escuela Primaria - Albergue (150 personas)'},
-            {lat: -34.8320, lng: -68.2480, type: 'shelter', title: 'Escuela Secundaria - Albergue (120 personas)'},
-            {lat: -34.8340, lng: -68.2520, type: 'shelter', title: 'Escuela Técnica - Albergue (100 personas)'},
-            {lat: -34.8310, lng: -68.2460, type: 'shelter', title: 'Jardín de Infantes - Albergue (80 personas)'}
+            {lat: -34.6185, lng: -68.3285, type: 'shelter', title: 'Hospital Central San Rafael - Albergue de Emergencia (300 personas)'},
+            {lat: -34.6200, lng: -68.3250, type: 'shelter', title: 'Plaza San Martín - Centro de Refugio (500 personas)'},
+            {lat: -34.6160, lng: -68.3300, type: 'shelter', title: 'Club San Rafael - Albergue Principal (400 personas)'},
+            {lat: -34.6150, lng: -68.3320, type: 'shelter', title: 'Escuela Normal - Albergue (200 personas)'},
+            {lat: -34.8333, lng: -68.25, type: 'shelter', title: 'Club del Pueblo Las Malvinas - Albergue (200 personas)'},
+            {lat: -34.8300, lng: -68.2450, type: 'shelter', title: 'Escuela Primaria Las Malvinas - Albergue (150 personas)'},
+            {lat: -34.8320, lng: -68.2480, type: 'shelter', title: 'Escuela Secundaria Las Malvinas - Albergue (120 personas)'}
         ],
         logistics: [
-            {lat: -34.8333, lng: -68.25, type: 'warehouse', title: 'Club del Pueblo - Centro de Distribución Principal'},
-            {lat: -34.8300, lng: -68.2450, type: 'warehouse', title: 'Escuela Primaria - Centro de Suministros'},
-            {lat: -34.8320, lng: -68.2480, type: 'truck', title: 'Escuela Secundaria - Punto de Abastecimiento'},
-            {lat: -34.8340, lng: -68.2520, type: 'truck', title: 'Escuela Técnica - Punto de Distribución'},
-            {lat: -34.8310, lng: -68.2460, type: 'fuel', title: 'Jardín de Infantes - Punto de Combustible'}
+            {lat: -34.6185, lng: -68.3285, type: 'warehouse', title: 'Hospital Central San Rafael - Centro de Distribución Médica'},
+            {lat: -34.6200, lng: -68.3250, type: 'warehouse', title: 'Plaza San Martín - Centro de Abastecimiento Principal'},
+            {lat: -34.6160, lng: -68.3300, type: 'truck', title: 'Club San Rafael - Base de Vehículos de Emergencia'},
+            {lat: -34.6150, lng: -68.3320, type: 'fuel', title: 'Estación de Servicio Central - Punto de Combustible'},
+            {lat: -34.6170, lng: -68.3270, type: 'warehouse', title: 'Depósito Municipal - Suministros de Emergencia'},
+            {lat: -34.8333, lng: -68.25, type: 'warehouse', title: 'Club del Pueblo Las Malvinas - Centro de Distribución'},
+            {lat: -34.8300, lng: -68.2450, type: 'truck', title: 'Escuela Primaria Las Malvinas - Punto de Abastecimiento'}
         ]
     };
     
