@@ -108,12 +108,6 @@ function initializeSection(sectionId) {
         case 'alertas':
             initializeAlerts();
             break;
-        case 'comunicaciones':
-            initializeCommunications();
-            break;
-        case 'centro-operaciones':
-            initializeOperationsCenter();
-            break;
         case 'informacion':
             initializeInformation();
             break;
@@ -176,39 +170,57 @@ function updateMapMarkers() {
 
 function addMapMarkers() {
     const markers = {
+        // Daños estructurales y zonas afectadas
         damage: [
             {lat: -34.6177, lng: -68.3301, type: 'severe', title: 'Hospital Teodoro J. Schestakow - Derrumbe parcial 3 pisos superiores'},
             {lat: -34.6180, lng: -68.3280, type: 'severe', title: 'Hotel Tower - Colapso estructural total'},
             {lat: -34.6200, lng: -68.3250, type: 'moderate', title: 'Barrios Urbanos - Grietas profundas y derrumbes parciales'},
-            {lat: -34.8333, lng: -68.25, type: 'moderate', title: 'Distrito Las Malvinas - Daños por réplica'},
-            {lat: -34.6150, lng: -68.3320, type: 'minor', title: 'Zona Centro - Daños menores en edificios públicos'}
+            {lat: -34.6155, lng: -68.3342, type: 'moderate', title: 'Edificios Públicos - Grietas y evaluación estructural'},
+            {lat: -34.8333, lng: -68.25, type: 'severe', title: 'Distrito Las Malvinas - Daños severos estructurales y réplicas'},
+            {lat: -34.9085, lng: -68.6240, type: 'moderate', title: 'Complejo Hidroeléctrico El Nihuil - Afectación operativa'},
+            {lat: -34.9250, lng: -68.6150, type: 'minor', title: 'Cañón del Atuel - Derrumbes parciales en taludes'},
+            {lat: -34.6150, lng: -68.3320, type: 'minor', title: 'Zona Centro - Daños menores en edificios públicos'},
+            {lat: -34.6405, lng: -68.3500, type: 'minor', title: 'Tramo Línea Capiz-Pedro Vargas - Inspección en curso'}
         ],
+        // Servicios críticos y coordinación
         services: [
             {lat: -34.6177, lng: -68.3301, type: 'hospital', title: 'Hospital Teodoro J. Schestakow - Servicios limitados por daños'},
             {lat: -34.6185, lng: -68.3285, type: 'hospital', title: 'Hospital Central San Rafael - Servicios de emergencia 24h'},
+            {lat: -34.6192, lng: -68.3275, type: 'hospital', title: 'Hospital de Campaña - 30 camas operativas'},
             {lat: -34.6200, lng: -68.3250, type: 'hospital', title: 'Consultorio Norte - Atención extendida'},
             {lat: -34.6150, lng: -68.3320, type: 'police', title: 'Comisaría Central - Puesto de Seguridad'},
             {lat: -34.6160, lng: -68.3300, type: 'fire', title: 'Bomberos San Rafael - Base de Emergencia'},
+            {lat: -34.6205, lng: -68.3290, type: 'police', title: 'Punto Coordinación Voluntariado - Plaza San Martín'},
             {lat: -34.8333, lng: -68.25, type: 'hospital', title: 'Club del Pueblo Las Malvinas - Punto de Atención'},
-            {lat: -34.8300, lng: -68.2450, type: 'hospital', title: 'Escuela Primaria Las Malvinas - Punto de Atención'}
+            {lat: -34.8300, lng: -68.2450, type: 'hospital', title: 'Escuela Primaria Las Malvinas - Punto de Atención'},
+            {lat: -34.8325, lng: -68.2475, type: 'hospital', title: 'Escuela Secundaria Las Malvinas - Consultas Básicas'}
         ],
+        // Albergues y refugios
         shelters: [
             {lat: -34.6185, lng: -68.3285, type: 'shelter', title: 'Hospital Central San Rafael - Albergue de Emergencia (300 personas)'},
             {lat: -34.6200, lng: -68.3250, type: 'shelter', title: 'Plaza San Martín - Centro de Refugio (500 personas)'},
             {lat: -34.6160, lng: -68.3300, type: 'shelter', title: 'Club San Rafael - Albergue Principal (400 personas)'},
             {lat: -34.6150, lng: -68.3320, type: 'shelter', title: 'Escuela Normal - Albergue (200 personas)'},
+            {lat: -34.6172, lng: -68.3335, type: 'shelter', title: 'Gimnasio Municipal - Albergue (150 personas)'},
             {lat: -34.8333, lng: -68.25, type: 'shelter', title: 'Club del Pueblo Las Malvinas - Albergue (200 personas)'},
             {lat: -34.8300, lng: -68.2450, type: 'shelter', title: 'Escuela Primaria Las Malvinas - Albergue (150 personas)'},
-            {lat: -34.8320, lng: -68.2480, type: 'shelter', title: 'Escuela Secundaria Las Malvinas - Albergue (120 personas)'}
+            {lat: -34.8320, lng: -68.2480, type: 'shelter', title: 'Escuela Secundaria Las Malvinas - Albergue (120 personas)'},
+            {lat: -34.8290, lng: -68.2460, type: 'shelter', title: 'Centro Comunitario Las Malvinas - Apoyo Psicosocial (60 personas)'}
         ],
+        // Logística y distribución
         logistics: [
             {lat: -34.6185, lng: -68.3285, type: 'warehouse', title: 'Hospital Central San Rafael - Centro de Distribución Médica'},
             {lat: -34.6200, lng: -68.3250, type: 'warehouse', title: 'Plaza San Martín - Centro de Abastecimiento Principal'},
             {lat: -34.6160, lng: -68.3300, type: 'truck', title: 'Club San Rafael - Base de Vehículos de Emergencia'},
             {lat: -34.6150, lng: -68.3320, type: 'fuel', title: 'Estación de Servicio Central - Punto de Combustible'},
             {lat: -34.6170, lng: -68.3270, type: 'warehouse', title: 'Depósito Municipal - Suministros de Emergencia'},
+            {lat: -34.6208, lng: -68.3295, type: 'warehouse', title: 'Centro Clasificación Insumos - Plaza San Martín'},
+            {lat: -34.6192, lng: -68.3275, type: 'truck', title: 'Hospital de Campaña - Logística Médica'},
             {lat: -34.8333, lng: -68.25, type: 'warehouse', title: 'Club del Pueblo Las Malvinas - Centro de Distribución'},
-            {lat: -34.8300, lng: -68.2450, type: 'truck', title: 'Escuela Primaria Las Malvinas - Punto de Abastecimiento'}
+            {lat: -34.8300, lng: -68.2450, type: 'truck', title: 'Escuela Primaria Las Malvinas - Punto de Abastecimiento'},
+            {lat: -34.8325, lng: -68.2475, type: 'truck', title: 'Escuela Secundaria Las Malvinas - Distribución Secundaria'},
+            {lat: -34.9085, lng: -68.6240, type: 'fuel', title: 'El Nihuil - Operación Técnica Energía'},
+            {lat: -34.6405, lng: -68.3500, type: 'warehouse', title: 'Tramo Línea Capiz-Pedro Vargas - Base Técnica'}
         ]
     };
     
@@ -247,19 +259,22 @@ function getMarkerIcon(type) {
 
 function updateMapControls() {
     // Update button states
-    const buttons = document.querySelectorAll('.map-controls .btn');
+    const buttons = document.querySelectorAll('.map-btn');
     buttons.forEach(btn => {
-        btn.classList.remove('btn-primary');
-        btn.classList.add('btn-secondary');
+        btn.classList.remove('active');
     });
     
-    // Find and highlight active button
-    const activeButton = Array.from(buttons).find(btn => 
-        btn.onclick.toString().includes(mapMode)
-    );
+    // Find and highlight active button based on mapMode
+    const modeToClass = {
+        'damage': 'map-btn-damage',
+        'services': 'map-btn-services',
+        'shelters': 'map-btn-shelters',
+        'logistics': 'map-btn-logistics'
+    };
+    
+    const activeButton = document.querySelector(`.${modeToClass[mapMode]}`);
     if (activeButton) {
-        activeButton.classList.remove('btn-secondary');
-        activeButton.classList.add('btn-primary');
+        activeButton.classList.add('active');
     }
 }
 
@@ -306,6 +321,9 @@ function initializeAlerts() {
         });
     }
     
+    // Ordenar alertas existentes por fecha (más recientes primero)
+    sortAlertsChronologically();
+
     // Simulate real-time alerts
     setInterval(updateActiveAlerts, 10000);
 }
@@ -344,6 +362,9 @@ function addAlertToList(alert) {
     const alertList = document.querySelector('.alert-list');
     const alertItem = document.createElement('div');
     alertItem.className = `alert-item ${alert.type}`;
+    // Sellamos fecha/hora ISO para orden cronológico (usamos hora actual local)
+    const now = new Date();
+    alertItem.dataset.datetime = now.toISOString();
     
     const iconClass = {
         emergency: 'fas fa-exclamation-triangle',
@@ -371,6 +392,9 @@ function addAlertToList(alert) {
     if (alerts.length > 5) {
         alertList.removeChild(alerts[alerts.length - 1]);
     }
+
+    // Reordenar tras inserción (más reciente primero)
+    sortAlertsChronologically();
 }
 
 function simulateAlertTransmission(alert) {
@@ -394,6 +418,64 @@ function updateActiveAlerts() {
     });
 }
 
+// Orden dinámico de alertas basadas en atributo data-datetime (ISO) descendente
+function sortAlertsChronologically() {
+    const alertList = document.querySelector('.alert-list');
+    if (!alertList) return;
+    const items = Array.from(alertList.querySelectorAll('.alert-item'));
+    // Solo actuar si ya tienen data-datetime
+    if (!items.every(i => i.dataset.datetime)) return;
+    items.sort((a, b) => new Date(b.dataset.datetime) - new Date(a.dataset.datetime));
+    items.forEach(item => alertList.appendChild(item));
+}
+
+// Orden para boletines periódicos
+function sortBulletinsChronologically() {
+    const bulletinList = document.querySelector('.bulletin-list');
+    if (!bulletinList) return;
+    const items = Array.from(bulletinList.querySelectorAll('.bulletin-item'));
+    if (!items.every(i => i.dataset.datetime)) return;
+    items.sort((a, b) => new Date(b.dataset.datetime) - new Date(a.dataset.datetime));
+    items.forEach(item => bulletinList.appendChild(item));
+}
+
+// Orden para plantillas de mensajes en Centro de Comunicaciones
+function sortCommunicationTemplatesChronologically() {
+    const container = document.querySelector('.message-templates');
+    if (!container) return;
+    const items = Array.from(container.querySelectorAll('.template-item'));
+    if (!items.every(i => i.dataset.datetime)) return;
+    items.sort((a, b) => new Date(b.dataset.datetime) - new Date(a.dataset.datetime));
+    items.forEach(item => container.appendChild(item));
+}
+// Inserta visualmente la fecha/hora formateada con día (Lunes 15/01 08:15)
+function renderCommunicationTemplateTimestamps() {
+    const items = document.querySelectorAll('.message-templates .template-item');
+    items.forEach(item => {
+        if (!item.dataset.datetime) return;
+        if (item.querySelector('.template-timestamp')) return; // evitar duplicado
+        const date = new Date(item.dataset.datetime);
+        const dd = String(date.getDate()).padStart(2,'0');
+        const mm = String(date.getMonth()+1).padStart(2,'0');
+        const hh = String(date.getHours()).padStart(2,'0');
+        const mi = String(date.getMinutes()).padStart(2,'0');
+        // Mapeo de días forzado al escenario (15=Lunes, 16=Martes, 17=Miércoles, 18=Jueves, 19=Viernes)
+        const dayNumber = parseInt(dd,10);
+        const escenarioDias = {15:'Lunes',16:'Martes',17:'Miércoles',18:'Jueves',19:'Viernes'};
+        const diaTexto = escenarioDias[dayNumber] || 'Día';
+        const formatted = `${diaTexto} ${dd}/${mm} ${hh}:${mi}`;
+        const badge = document.createElement('div');
+        badge.className = 'template-timestamp';
+        badge.textContent = formatted;
+        const firstHeading = item.querySelector('h4');
+        if (firstHeading) {
+            firstHeading.parentNode.insertBefore(badge, firstHeading);
+        } else {
+            item.insertBefore(badge, item.firstChild);
+        }
+    });
+}
+
 // Communications functionality
 function initializeCommunications() {
     // Initialize radio controls
@@ -407,6 +489,13 @@ function initializeCommunications() {
             }
         });
     });
+
+    // Ordenar boletines apenas se carga la sección
+    sortBulletinsChronologically();
+    // Ordenar plantillas (más recientes primero)
+    sortCommunicationTemplatesChronologically();
+    // Renderizar timestamps visibles
+    renderCommunicationTemplateTimestamps();
 }
 
 function startBroadcast() {
@@ -455,52 +544,6 @@ function scheduleBulletin() {
     // In a real application, this would open a scheduling interface
 }
 
-// Operations Center functionality
-function initializeOperationsCenter() {
-    // Initialize personnel status updates
-    setInterval(updatePersonnelStatus, 15000);
-    
-    // Initialize inventory updates
-    setInterval(updateInventory, 30000);
-}
-
-function updatePersonnelStatus() {
-    const statusElements = document.querySelectorAll('.person .status');
-    statusElements.forEach(status => {
-        const statuses = ['available', 'busy', 'warning'];
-        const currentStatus = status.className.split(' ').find(cls => 
-            ['available', 'busy', 'warning'].includes(cls)
-        );
-        
-        // Randomly change status (10% chance)
-        if (Math.random() < 0.1) {
-            const newStatus = statuses[Math.floor(Math.random() * statuses.length)];
-            status.className = `status ${newStatus}`;
-            
-            const statusTexts = {
-                available: 'Disponible',
-                busy: 'En Campo',
-                warning: 'Mantenimiento'
-            };
-            
-            status.textContent = statusTexts[newStatus];
-        }
-    });
-}
-
-function updateInventory() {
-    const quantities = document.querySelectorAll('.quantity');
-    quantities.forEach(quantity => {
-        const [current, total] = quantity.textContent.split('/').map(Number);
-        
-        // Simulate small changes in inventory
-        if (Math.random() < 0.2) {
-            const change = Math.random() < 0.5 ? 1 : -1;
-            const newCurrent = Math.max(0, Math.min(total, current + change));
-            quantity.textContent = `${newCurrent}/${total}`;
-        }
-    });
-}
 
 // Information functionality
 function initializeInformation() {
@@ -656,14 +699,6 @@ document.addEventListener('keydown', function(e) {
                 e.preventDefault();
                 showSection('alertas');
                 break;
-            case '5':
-                e.preventDefault();
-                showSection('comunicaciones');
-                break;
-            case '6':
-                e.preventDefault();
-                showSection('centro-operaciones');
-                break;
             case '7':
                 e.preventDefault();
                 showSection('informacion');
@@ -718,7 +753,7 @@ if (!navigator.onLine) {
 
 // Test navigation function - for debugging
 function testNavigation() {
-    const sections = ['inicio', 'monitoreo', 'mapas', 'alertas', 'comunicaciones', 'centro-operaciones', 'informacion'];
+    const sections = ['inicio', 'monitoreo', 'mapas', 'alertas', 'informacion'];
     
     console.log('Testing navigation...');
     sections.forEach((sectionId, index) => {
